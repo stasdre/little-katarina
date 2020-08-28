@@ -7,6 +7,7 @@
     "scripts": {
         "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack.config.js --color",
         "build": "cross-env NODE_ENV=production webpack --config ./webpack.config.js --progress",
+        "deploy": "node gh-pages.js",
         "lint": "eslint ./src/**"
     },
     "dependencies": {
@@ -32,6 +33,7 @@
         "eslint-plugin-react": "^7.20.6",
         "eslint-plugin-react-hooks": "^4.1.0",
         "file-loader": "^6.0.0",
+        "gh-pages": "^3.1.0",
         "html-webpack-plugin": "^4.3.0",
         "mini-css-extract-plugin": "^0.10.0",
         "postcss-assets": "^5.0.0",
