@@ -1,0 +1,24 @@
+.langs {
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__item {
+        margin-right: 24px;
+        &:last-child {
+            margin-right: 0;
+        }
+        &_active .langs__ikon {
+            opacity: 1;
+        }
+    }
+    &__ikon {
+        opacity: 0.4;
+        @util size(30px, 19px);
+        transition: 0.3s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,95 @@
+.suggestions {
+    position: relative;
+    padding: 80px 0;
+    background: resolve('images/bg/suggestions.webp') center/cover no-repeat;
+    &__title {
+        position: absolute;
+        left: 0;
+        width: 40%;
+        padding: 15px;
+        background: #244018;
+        box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+        font-family: Raleway;
+        font-weight: 800;
+        font-size: 24pr;
+        line-height: 32pr;
+        text-align: center;
+        color: #ffffff;
+        border-radius: 0 12px 12px 0;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__left {
+        flex: 0 1 40%;
+        padding-top: 90px;
+    }
+    &__right {
+        flex: 0 1 44.6%;
+    }
+    &__subtitle {
+        font-family: Raleway;
+        font-weight: 800;
+        font-size: 24pr;
+        line-height: 32pr;
+        color: #244018;
+        margin-bottom: 45px;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        &_row {
+            flex-direction: row;
+            flex-wrap: wrap;
+            .suggestions__item {
+                width: 33.3333%;
+            }
+        }
+    }
+    &__item {
+        font-size: 20pr;
+        line-height: 32pr;
+        color: #244018;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: flex-start;
+    }
+    &__point {
+        @util size(21px);
+        border: 5px solid #244018;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 5px;
+        margin-right: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::before {
+            content: '';
+            display: block;
+            /* position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-55%, -55%); */
+            @util size(4px);
+            background: #244018;
+            box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+        }
+    }
+    &__extra-title {
+        font-family: Raleway;
+        font-size: 36pr;
+        line-height: 135%;
+        text-transform: uppercase;
+        color: #244018;
+        margin-bottom: 50px;
+        span {
+            font-weight: 200;
+            font-size: 24pr;
+            letter-spacing: 0.01em;
+            color: #244018;
+        }
+    }
+}

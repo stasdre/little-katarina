@@ -1,0 +1,17 @@
+mixin icon(name, className)
+  svg(class=className)
+    use(xlink:href=`${require('images/icons/sprite.svg').default}#${name}`)
+
+mixin nav(className, items)
+  ul(class=`${className}__list`)
+    each item in items
+      li(class=`${className}__item`)
+        a(class=`${className}__link` href=`${item[1]}`)= item[0]
+
+mixin langs(className, items)
+  ul(class=`${className}__list`)
+    each item in items
+      li(class=`${className}__item`)
+        a(class=`${className}__link` href=`${item[1]}`)
+          svg(class=`${className}__ikon`)
+              use(xlink:href=`${require('images/icons/sprite.svg').default}#${item[0]}`)

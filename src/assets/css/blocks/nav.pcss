@@ -1,0 +1,25 @@
+.nav {
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__item {
+        margin-right: 15px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__link {
+        font-family: var(--sub-font);
+        line-height: 23pr;
+        color: #fff;
+        font-size: 20pr;
+    }
+    &_footer {
+        .nav__link {
+            font-size: 18pr;
+            line-height: 21pr;
+        }
+    }
+}

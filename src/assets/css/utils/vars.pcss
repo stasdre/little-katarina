@@ -1,0 +1,16 @@
+:root {
+    --main-font: 'Open Sans', sans-serif;
+    --sub-font: 'Raleway', sans-serif;
+
+    --base-font-size: 14px;
+    --line-height: 1;
+
+    --min-width: 320px;
+
+    font: var(--base-font-size) / var(--line-height) var(--main-font);
+}
+
+@custom-media --extra-large-viewport screen and (max-width: 1200px);
+@custom-media --large-viewport screen and (max-width: 992px);
+@custom-media --medium-viewport screen and (max-width: 768px);
+@custom-media --small-viewport screen and (max-width: 576px);

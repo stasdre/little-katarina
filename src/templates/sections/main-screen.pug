@@ -1,0 +1,39 @@
+- 
+  const nav = [
+    ['Home', '#'],
+    ['Book time', '#'],
+    ['Contact us', '#'],
+  ]
+
+- 
+  const langs = [
+    ['EN', '#'],
+    ['France', '#'],
+    ['German', '#'],
+    ['Italian', '#'],
+    ['Spanish', '#'],
+  ]
+
+section.main-screen
+    .main-screen__wrapper
+        .container
+            header.header
+                .header__top
+                    nav.nav.header__nav
+                        +nav('nav', nav)
+                    .langs.header__langs
+                        +langs('langs', langs)
+                .header__bottom
+                    img(src=require('images/logo.svg').default).header__logo
+            .main-screen__title It is your paradise of pleasures
+                img(src=require('images/main-screen.svg').default).main-screen__icon
+        .main-screen__fantazi.fantazi
+            .fantazi__left
+                picture
+                    img(src=require('images/fantazi.jpg').default).fantazi__img
+            .fantazi__right
+                a(href="#").fantazi__down Enjoy it
+                .fantazi__text Feel a fantasy like you imagined
+                .fantazi__arrow-wrapper
+                    button.fantazi__btn
+                        +icon('arrow', 'fantazi__arrow')

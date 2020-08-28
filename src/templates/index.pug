@@ -1,0 +1,18 @@
+include ./_mixins.pug
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body
+        .wrapper
+            main.main
+                include ./sections/main-screen.pug
+                include ./sections/about.pug
+                include ./sections/members.pug
+                include ./sections/suggestions.pug
+                include ./sections/rooms.pug
+                include ./sections/extra.pug
+                include ./sections/book.pug
+            include ./sections/footer.pug

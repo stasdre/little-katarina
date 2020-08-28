@@ -1,0 +1,124 @@
+const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+module.exports = () => {
+    const mode = process.env.NODE_ENV
+    const isDev = mode === 'development'
+    const srcPath = path.resolve(__dirname, 'src')
+    const distPath = path.resolve(__dirname, './dist')
+
+    return {
+        mode,
+        entry: `${srcPath}/index.js`,
+        output: {
+            filename: `bundle-[hash].js`,
+            path: distPath,
+            publicPath: isDev ? '/' : '/little-katarina/',
+        },
+        resolve: {
+            alias: {
+                images: path.resolve(__dirname, 'src/assets/images'),
+            },
+        },
+        devtool: isDev ? 'source-map' : '',
+        devServer: {
+            contentBase: distPath,
+            compress: true,
+            hot: true,
+            open: true,
+            host: '0.0.0.0',
+            historyApiFallback: true,
+            noInfo: false,
+            overlay: true,
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    loader: 'babel-loader',
+                },
+                {
+                    test: /\.pug$/,
+                    use: {
+                        loader: 'pug-loader',
+                        options: {
+                            pretty: true,
+                        },
+                    },
+                },
+                {
+                    test: /\.(css|pcss)$/i,
+                    use: [
+                        {
+                            loader: isDev
+                                ? 'style-loader'
+                                : MiniCssExtractPlugin.loader,
+                        },
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: isDev,
+                                importLoaders: 1,
+                            },
+                        },
+                        {
+                            loader: 'postcss-loader',
+                        },
+                    ],
+                },
+                {
+                    test: /\.(png|jpg|webp|gif)$/,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: { name: 'images/[hash].[ext]' },
+                        },
+                    ],
+                },
+                {
+                    test: /\.svg$/,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: { name: 'images/[hash].[ext]' },
+                        },
+                        'svg-transform-loader',
+                        {
+                            loader: 'svgo-loader',
+                            options: {
+                                plugins: [
+                                    { removeUselessDefs: false },
+                                    { cleanupIDs: false },
+                                ],
+                            },
+                        },
+                    ],
+                },
+            ],
+        },
+        plugins: [
+            new CleanWebpackPlugin(),
+            new HtmlWebpackPlugin({
+                minify: false,
+                filename: 'index.html',
+                template: `${srcPath}/templates/index.pug`,
+            }),
+            new HtmlWebpackPlugin({
+                minify: false,
+                filename: 'contact-us.html',
+                template: `${srcPath}/templates/contact-us.pug`,
+            }),
+            new HtmlWebpackPlugin({
+                minify: false,
+                filename: 'book.html',
+                template: `${srcPath}/templates/book.pug`,
+            }),
+            new MiniCssExtractPlugin({
+                filename: `css/[name]-[hash].css`,
+            }),
+        ],
+    }
+}

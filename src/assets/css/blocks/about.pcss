@@ -1,0 +1,98 @@
+.about {
+    padding: 130px 0 100px 0;
+    /* background: #242520 resolve('images/bg/about_bg.webp') center no-repeat,
+        linear-gradient(94.88deg, #010101 -7.51%, rgba(78, 67, 57, 0.09) 58.47%);
+    background-size: cover; */
+    background: resolve('images/bg/about_bg.webp') no-repeat,
+        linear-gradient(
+            94.88deg,
+            rgba(1, 1, 1, 0.9) -7.51%,
+            rgba(78, 67, 57, 0.09) 58.47%
+        );
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__right {
+        position: relative;
+        flex: 0 0 55.42%;
+    }
+    &__left {
+        margin-right: 20px;
+        flex: 0 1 38.75%;
+    }
+    &__header {
+        font-family: Raleway;
+        font-size: 30pr;
+        line-height: 135%;
+        color: #ffffff;
+        margin-bottom: 30px;
+    }
+    &__text {
+        font-size: 20pr;
+        line-height: 135%;
+        color: #ffffff;
+        p {
+            padding: 10px 0;
+        }
+    }
+    &__galery {
+        display: flex;
+        justify-content: space-between;
+        min-height: 538px;
+        picture {
+            max-width: 398px;
+            overflow: hidden;
+            box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.25);
+            img {
+                display: block;
+                object-fit: cover;
+            }
+        }
+        picture:first-child {
+            align-self: flex-end;
+            margin-right: 18px;
+        }
+        picture:last-child {
+            align-self: flex-start;
+        }
+    }
+    &__info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-30%, 0);
+        padding: 67px 38px 30px 38px;
+        background: #d0b38a;
+        box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+        &::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            display: block;
+            @util size(10.93px);
+            background: #ffffff;
+            border-radius: 50%;
+        }
+    }
+    &__info-top {
+        font-family: Raleway;
+        font-weight: bold;
+        font-size: 30pr;
+        line-height: 35pr;
+        letter-spacing: 0.05em;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+    &__info-bottom {
+        font-weight: bold;
+        font-size: 14pr;
+        line-height: 22pr;
+        color: #ffffff;
+        opacity: 0.7;
+    }
+}
