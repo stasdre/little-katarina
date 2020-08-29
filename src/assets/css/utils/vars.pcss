@@ -10,7 +10,16 @@
     font: var(--base-font-size) / var(--line-height) var(--main-font);
 }
 
-@custom-media --extra-large-viewport screen and (max-width: 1200px);
-@custom-media --large-viewport screen and (max-width: 992px);
-@custom-media --medium-viewport screen and (max-width: 768px);
-@custom-media --small-viewport screen and (max-width: 576px);
+@custom-media --extra-large-viewport only screen and (max-width: 1200px);
+@custom-media --large-viewport only screen and (max-width: 992px);
+@custom-media --medium-viewport only screen and (max-width: 768px);
+@custom-media --small-viewport only screen and (max-width: 576px);
+
+@custom-media --retina-viewport only screen and (min-resolution: 192dpi);
+@custom-media --retina-etra-large-viewport only screen and (min-resolution: 192dpi) and (max-width: 1200px);
+@custom-media --retina-large-viewport only screen and (min-resolution: 192dpi) and (max-width: 992px);
+@custom-media --retina-medium-viewport only screen and (min-resolution: 192dpi) and (max-width: 768px);
+@custom-media --retina-small-viewport only screen and (min-resolution: 192dpi) and (max-width: 576px);
+
+/* @custom-media --retina-viewport (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 96dpi); */
