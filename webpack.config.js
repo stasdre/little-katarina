@@ -28,7 +28,7 @@ module.exports = () => {
             compress: true,
             hot: true,
             open: true,
-            host: '0.0.0.0',
+            //host: '0.0.0.0',
             historyApiFallback: true,
             noInfo: false,
             overlay: true,
