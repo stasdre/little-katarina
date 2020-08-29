@@ -74,7 +74,11 @@ module.exports = () => {
                     use: [
                         {
                             loader: 'file-loader',
-                            options: { name: 'images/[hash].[ext]' },
+                            options: {
+                                name: isDev
+                                    ? 'images/[name].[ext]'
+                                    : 'images/[hash].[ext]',
+                            },
                         },
                     ],
                 },

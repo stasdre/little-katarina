@@ -2,6 +2,11 @@ body {
     background: #d6bd96;
     color: #fff;
     font-family: var(--main-font);
+    @media (--large-viewport) {
+        &.lock {
+            overflow: hidden;
+        }
+    }
 }
 
 .wrapper {
@@ -16,5 +21,11 @@ body {
     @util center-block;
     @media (--large-viewport) {
         max-width: 990px;
+    }
+    @media (--medium-viewport) {
+        max-width: 750px;
+    }
+    @media (--small-viewport) {
+        max-width: 560px;
     }
 }

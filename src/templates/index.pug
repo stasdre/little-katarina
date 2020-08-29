@@ -6,9 +6,11 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
     body
+        button.burger
+          span
         .wrapper
+            include ./sections/main-screen.pug
             main.main
-                include ./sections/main-screen.pug
                 include ./sections/about.pug
                 include ./sections/members.pug
                 include ./sections/suggestions.pug
