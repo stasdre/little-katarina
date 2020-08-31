@@ -9,10 +9,8 @@ section.about
                 p Our pretty angels will touch your senses softly as their wings feathers and will grant you the sweetest resurgence.
         .about__right
             .about__galery
-                picture
-                    img(src=require('images/about/about_1.webp').default)
-                picture
-                    img(src=require('images/about/about_2.webp').default)
-            .about__info
-                .about__info-top Relax
-                .about__info-bottom everything for you
+                +picture('about_1','about/', 'about')
+                +picture('about_2','about/', 'about')
+                .about__info
+                    .about__info-top Relax
+                    .about__info-bottom everything for you

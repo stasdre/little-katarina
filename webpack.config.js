@@ -8,12 +8,14 @@ module.exports = () => {
     const isDev = mode === 'development'
     const srcPath = path.resolve(__dirname, 'src')
     const distPath = path.resolve(__dirname, './dist')
+    const fileName = isDev ? `[name]-[hash].js` : `[name]-[contenthash].js`
+    const assetsFileName = isDev ? `[hash].[ext]` : `[contenthash].[ext]`
 
     return {
         mode,
         entry: `${srcPath}/index.js`,
         output: {
-            filename: `bundle-[hash].js`,
+            filename: fileName,
             path: distPath,
             publicPath: isDev ? '/' : '/little-katarina/',
         },
@@ -22,7 +24,14 @@ module.exports = () => {
                 images: path.resolve(__dirname, 'src/assets/images'),
             },
         },
-        devtool: isDev ? 'source-map' : '',
+        devtool: isDev ? 'eval-cheap-module-source-map' : '',
+        optimization: {
+            moduleIds: 'hashed',
+            runtimeChunk: 'single',
+            splitChunks: {
+                chunks: 'all',
+            },
+        },
         devServer: {
             contentBase: distPath,
             compress: true,
@@ -75,9 +84,7 @@ module.exports = () => {
                         {
                             loader: 'file-loader',
                             options: {
-                                name: isDev
-                                    ? 'images/[name].[ext]'
-                                    : 'images/[hash].[ext]',
+                                name: `images/${assetsFileName}`,
                             },
                         },
                     ],
@@ -87,7 +94,7 @@ module.exports = () => {
                     use: [
                         {
                             loader: 'file-loader',
-                            options: { name: 'images/[hash].[ext]' },
+                            options: { name: `images/${assetsFileName}` },
                         },
                         'svg-transform-loader',
                         {
@@ -121,7 +128,7 @@ module.exports = () => {
                 template: `${srcPath}/templates/book.pug`,
             }),
             new MiniCssExtractPlugin({
-                filename: `css/[name]-[hash].css`,
+                filename: `css/[name]-[contenthash].css`,
             }),
         ],
     }

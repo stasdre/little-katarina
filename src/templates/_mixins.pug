@@ -15,3 +15,12 @@ mixin langs(className, items)
         a(class=`${className}__link` href=`${item[1]}`)
           svg(class=`${className}__ikon`)
               use(xlink:href=`${require('images/icons/sprite.svg').default}#${item[0]}`)
+
+mixin picture(name, folder='', className='')
+  - const img = require(`images/${folder}${name}.jpg`).default
+  - const imgR = require(`images/${folder}${name}@2x.jpg`).default
+  - const imgWp = require(`images/${folder}${name}.webp`).default
+  - const imgRWp = require(`images/${folder}${name}@2x.webp`).default
+  picture(class=`${className}__picture`)
+      source(srcset=`${imgWp} 1x, ${imgRWp} 2x` type="image/webp")
+      img(src=img srcset=`${imgR} 2x` class=`${className}__img`)

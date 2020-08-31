@@ -1,6 +1,9 @@
 .baner {
     display: flex;
     align-items: stretch;
+    @media (--large-viewport) {
+        flex-direction: column;
+    }
     &__left {
         box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
         flex: 1 0 40.3%;
@@ -9,6 +12,12 @@
         padding: 42px 20px 42px 27px;
         display: flex;
         align-items: baseline;
+        @media (--large-viewport) {
+            margin-right: -24px;
+            padding: 16px 66px 16px 20px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
     }
     &__text {
         font-family: Raleway;
@@ -19,11 +28,21 @@
             font-size: 22pr;
             font-weight: 800;
         }
+        @media (--small-viewport) {
+            font-size: 16pr;
+            line-height: 25pr;
+            span {
+                font-size: 18pr;
+            }
+        }
     }
     &__icon {
         flex-shrink: 0;
         @util size(18px);
         margin-right: 32px;
+        @media (--large-viewport) {
+            margin-right: 22px;
+        }
     }
     &__right {
         box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
@@ -31,6 +50,14 @@
         padding: 52px 20px;
         background: rgb(0, 0, 0, 0.7);
         border-radius: 0 20px 20px 0;
+        @media (--large-viewport) {
+            background: none;
+            box-shadow: none;
+            border-radius: 0;
+            padding: 0;
+            color: #244018;
+            text-align: center;
+        }
     }
     &__title {
         font-family: Raleway;
@@ -39,5 +66,9 @@
         text-align: center;
         letter-spacing: 0.02em;
         color: #ffffff;
+        @media (--large-viewport) {
+            color: #244018;
+            font-size: 24pr;
+        }
     }
 }

@@ -1,11 +1,70 @@
+body.webp .rooms {
+    /* for desktop */
+    background: resolve('images/bg/rooms.webp') bottom center/cover fixed
+        no-repeat;
+    @media (--retina-viewport) {
+        background: resolve('images/bg/rooms@2x.webp') bottom center/cover fixed
+            no-repeat;
+    }
+
+    /* for tablets */
+    @media (--retina-large-viewport) {
+        background: resolve('images/bg/rooms_sm@2x.webp') bottom center/cover
+            no-repeat;
+    }
+    @media (--large-viewport) {
+        background: resolve('images/bg/rooms_sm.webp') bottom center/cover
+            no-repeat;
+    }
+
+    /* for mobile */
+    @media (--retina-small-viewport) {
+        background: resolve('images/bg/rooms_xs@2x.webp') bottom center/cover
+            no-repeat;
+    }
+    @media (--small-viewport) {
+        background: resolve('images/bg/rooms_xs.webp') bottom center/cover
+            no-repeat;
+    }
+}
+
+body.no-webp .rooms {
+    /* for desktop */
+    background: resolve('images/bg/rooms.jpg') bottom center/cover fixed
+        no-repeat;
+    @media (--retina-viewport) {
+        background: resolve('images/bg/rooms@2x.jpg') bottom center/cover fixed
+            no-repeat;
+    }
+
+    /* for tablets */
+    @media (--retina-large-viewport) {
+        background: resolve('images/bg/rooms_sm@2x.jpg') bottom center/cover
+            no-repeat;
+    }
+    @media (--large-viewport) {
+        background: resolve('images/bg/rooms_sm.jpg') bottom center/cover
+            no-repeat;
+    }
+
+    /* for mobile */
+    @media (--retina-small-viewport) {
+        background: resolve('images/bg/rooms_xs@2x.jpg') bottom center/cover
+            no-repeat;
+    }
+    @media (--small-viewport) {
+        background: resolve('images/bg/rooms_xs.jpg') bottom center/cover
+            no-repeat;
+    }
+}
+
 .rooms {
     position: relative;
     padding: 100px 0;
-    background: resolve('images/bg/rooms.webp') no-repeat;
-    background-attachment: fixed;
-    background-position: bottom center;
-    background-size: cover;
 
+    @media (--medium-viewport) {
+        padding: 40px 0 70px 0;
+    }
     &__title {
         font-family: Raleway;
         font-size: 36pr;
@@ -13,18 +72,36 @@
         text-transform: uppercase;
         color: #ffffff;
         margin-bottom: 60px;
+        @media (--medium-viewport) {
+            font-size: 22pr;
+            margin-bottom: 30px;
+            text-align: center;
+        }
     }
     &__baner {
         display: flex;
         align-items: stretch;
         box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
         padding: 0 36px;
+        @media (--medium-viewport) {
+            flex-direction: column;
+            padding: 0;
+        }
     }
     &__baner-left {
         flex: 0 1 46.4%;
         padding: 50px 50px 50px 40px;
         background: #fff;
         border-radius: 12px 0 0 12px;
+        @media (--medium-viewport) {
+            margin-bottom: 40px;
+            border-radius: 0 12px 12px 0;
+            margin-left: -24px;
+            margin-right: auto;
+            flex: initial;
+            width: 95%;
+            padding: 50px 62px 50px 30px;
+        }
     }
     &__baner-right {
         flex: 0 1 53.6%;
@@ -32,12 +109,27 @@
         background: #1b3012;
         border-radius: 0 12px 12px 0;
         position: relative;
+        @media (--medium-viewport) {
+            border-radius: 12px 0 0 12px;
+            margin-right: -24px;
+            margin-left: auto;
+            flex: initial;
+            width: 95%;
+            padding: 50px 66px 30px 36px;
+        }
     }
     &__img {
         position: absolute;
         right: 20px;
         bottom: 20px;
         @util size(182px 69px);
+        @media (--medium-viewport) {
+            position: initial;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
     }
     &__subtitle {
         font-weight: 800;
@@ -45,6 +137,13 @@
         line-height: 33pr;
         color: #262628;
         margin-bottom: 25px;
+        @media (--medium-viewport) {
+            margin-bottom: 22px;
+        }
+        @media (--small-viewport) {
+            font-size: 20pr;
+            line-height: 27pr;
+        }
         &_white {
             color: #fff;
         }
@@ -54,6 +153,9 @@
         line-height: 24pr;
         color: #262628;
         opacity: 0.7;
+        @media (--small-viewport) {
+            font-size: 14pr;
+        }
         &_white {
             color: #ffffff;
             opacity: 0.8;

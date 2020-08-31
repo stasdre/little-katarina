@@ -1,29 +1,151 @@
-.about {
-    padding: 130px 0 100px 0;
-    /* background: #242520 resolve('images/bg/about_bg.webp') center no-repeat,
-        linear-gradient(94.88deg, #010101 -7.51%, rgba(78, 67, 57, 0.09) 58.47%);
-    background-size: cover; */
-    background: resolve('images/bg/about_bg.webp') no-repeat,
+body.webp .about {
+    /* for desktop */
+    background: resolve('images/bg/about_bg.webp') center center/cover fixed
+            no-repeat,
         linear-gradient(
             94.88deg,
             rgba(1, 1, 1, 0.9) -7.51%,
             rgba(78, 67, 57, 0.09) 58.47%
         );
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
+    @media (--retina-viewport) {
+        background: resolve('images/bg/about_bg@2x.webp') center center/cover
+                fixed no-repeat,
+            linear-gradient(
+                94.88deg,
+                rgba(1, 1, 1, 0.9) -7.51%,
+                rgba(78, 67, 57, 0.09) 58.47%
+            );
+    }
+
+    /* for tablets */
+    @media (--retina-large-viewport) {
+        background: resolve('images/bg/about_sm@2x.webp') center center/cover
+                no-repeat,
+            linear-gradient(
+                94.88deg,
+                rgba(1, 1, 1, 0.9) -7.51%,
+                rgba(78, 67, 57, 0.09) 58.47%
+            );
+    }
+    @media (--large-viewport) {
+        background: resolve('images/bg/about_sm.webp') center center/cover
+                no-repeat,
+            linear-gradient(
+                94.88deg,
+                rgba(1, 1, 1, 0.9) -7.51%,
+                rgba(78, 67, 57, 0.09) 58.47%
+            );
+    }
+
+    /* for mobile */
+    @media (--retina-small-viewport) {
+        background: resolve('images/bg/about_xs@2x.webp') center center/cover
+                no-repeat,
+            linear-gradient(
+                94.88deg,
+                rgba(1, 1, 1, 0.9) -7.51%,
+                rgba(78, 67, 57, 0.09) 58.47%
+            );
+    }
+    @media (--small-viewport) {
+        background: resolve('images/bg/about_xs.webp') center center/cover
+                no-repeat,
+            linear-gradient(
+                94.88deg,
+                rgba(1, 1, 1, 0.9) -7.51%,
+                rgba(78, 67, 57, 0.09) 58.47%
+            );
+    }
+}
+
+body.no-webp .about {
+    /* for desktop */
+    background: resolve('images/bg/about_bg.jpg') center center/cover fixed
+            no-repeat,
+        linear-gradient(
+            94.88deg,
+            rgba(1, 1, 1, 0.9) -7.51%,
+            rgba(78, 67, 57, 0.09) 58.47%
+        );
+    @media (--retina-viewport) {
+        background: resolve('images/bg/about_bg@2x.jpg') center center/cover
+                fixed no-repeat,
+            linear-gradient(
+                94.88deg,
+                rgba(1, 1, 1, 0.9) -7.51%,
+                rgba(78, 67, 57, 0.09) 58.47%
+            );
+    }
+
+    /* for tablets */
+    @media (--retina-large-viewport) {
+        background: resolve('images/bg/about_sm@2x.jpg') center center/cover
+                no-repeat,
+            linear-gradient(
+                94.88deg,
+                rgba(1, 1, 1, 0.9) -7.51%,
+                rgba(78, 67, 57, 0.09) 58.47%
+            );
+    }
+    @media (--large-viewport) {
+        background: resolve('images/bg/about_sm.jpg') center center/cover
+                no-repeat,
+            linear-gradient(
+                94.88deg,
+                rgba(1, 1, 1, 0.9) -7.51%,
+                rgba(78, 67, 57, 0.09) 58.47%
+            );
+    }
+
+    /* for mobile */
+    @media (--retina-small-viewport) {
+        background: resolve('images/bg/about_xs@2x.jpg') center center/cover
+                no-repeat,
+            linear-gradient(
+                94.88deg,
+                rgba(1, 1, 1, 0.9) -7.51%,
+                rgba(78, 67, 57, 0.09) 58.47%
+            );
+    }
+    @media (--small-viewport) {
+        background: resolve('images/bg/about_xs.jpg') center center/cover
+                no-repeat,
+            linear-gradient(
+                94.88deg,
+                rgba(1, 1, 1, 0.9) -7.51%,
+                rgba(78, 67, 57, 0.09) 58.47%
+            );
+    }
+}
+
+.about {
+    padding: 130px 0 100px 0;
+    @media (--medium-viewport) {
+        padding: 15px 0 60px 0;
+    }
     &__container {
         display: flex;
         justify-content: space-between;
+        @media (--large-viewport) {
+            flex-direction: column;
+        }
     }
     &__right {
         position: relative;
-        flex: 0 0 55.42%;
+        flex: 0 1 55.42%;
         align-self: flex-start;
+        @media (--large-viewport) {
+            flex: initial;
+            width: 100%;
+        }
     }
     &__left {
         margin-right: 20px;
         flex: 0 1 38.75%;
+        @media (--large-viewport) {
+            flex: initial;
+            width: 100%;
+        }
     }
     &__header {
         font-family: Raleway;
@@ -31,42 +153,54 @@
         line-height: 135%;
         color: #ffffff;
         margin-bottom: 30px;
+        @media (--small-viewport) {
+            font-size: 20pr;
+        }
     }
     &__text {
         font-size: 20pr;
         line-height: 135%;
         color: #ffffff;
+        @media (--small-viewport) {
+            font-size: 16pr;
+        }
         p {
             padding: 10px 0;
         }
     }
     &__galery {
+        position: relative;
         display: flex;
-        justify-content: space-between;
-        min-height: 538px;
+        justify-content: center;
+        min-height: 53.3vh;
+        @media (--extra-large-viewport) {
+            min-height: 60vh;
+        }
         picture {
-            max-width: 398px;
+            max-width: 50%;
             overflow: hidden;
             box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.25);
             img {
                 display: block;
                 object-fit: cover;
+                width: 100%;
+                height: 100%;
             }
         }
         picture:first-child {
             align-self: flex-end;
             margin-right: 18px;
         }
-        picture:last-child {
+        picture:nth-child(2) {
             align-self: flex-start;
         }
     }
     &__info {
         position: absolute;
         top: 50%;
-        left: 50%;
-        transform: translate(-30%, 0);
-        padding: 67px 38px 30px 38px;
+        left: 40%;
+        padding: 8.4% 3.8% 3.8% 3.8%;
+        width: 25.6%;
         background: #d0b38a;
         box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
         &::before {
