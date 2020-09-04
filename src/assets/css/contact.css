@@ -1,0 +1,11 @@
+@import './init.css';
+
+@import './blocks/header.css';
+@import './blocks/langs.css';
+@import './blocks/nav.css';
+@import './blocks/btn-arrow.css';
+@import './blocks/burger.css';
+@import './blocks/footer.css';
+
+@import './blocks/contact.css';
+@import './blocks/form.css';

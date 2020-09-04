@@ -1,0 +1,35 @@
+.langs__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+    @media (--medium) {
+        justify-content: flex-start;
+    }
+    @media (--large) {
+        padding-left: 0;
+        justify-content: center;
+    }
+}
+.langs__item {
+    margin-right: 24px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+.langs__item_active {
+    & .langs__ikon {
+        opacity: 1;
+    }
+}
+.langs__ikon {
+    opacity: 0.4;
+    @util size(24px, 16px);
+    transition: 0.3s;
+    &:hover {
+        opacity: 1;
+    }
+    @media (--medium) {
+        @util size(30px, 19px);
+    }
+}

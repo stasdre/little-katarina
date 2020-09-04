@@ -1,0 +1,104 @@
+.baner {
+    display: flex;
+    flex-direction: column;
+    @media (--large) {
+        flex-direction: row;
+        margin-bottom: 46px;
+    }
+}
+.baner__left {
+    position: relative;
+    background: #244018;
+    border-radius: 27px 0 0 27px;
+    padding: 23px 66px 22px 20px;
+    /* padding: 42px 20px 42px 27px; */
+    display: flex;
+    align-items: center;
+    margin-left: -46vw;
+    left: 50%;
+    width: 100vw;
+    margin-bottom: 40px;
+    @media (--large) {
+        position: initial;
+        width: 40vw;
+        margin-left: 0;
+        margin-bottom: 0;
+        border-radius: 20px 0 0 20px;
+        align-items: baseline;
+        padding: 42px 32px 42px 20px;
+        box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+    }
+}
+.baner__text {
+    font-family: Raleway;
+    font-size: 14px;
+    line-height: 25px;
+    color: #ffffff;
+    @media (--large) {
+        font-size: 20px;
+        line-height: 32px;
+    }
+    & span {
+        font-size: 16px;
+        font-weight: 800;
+        @media (--large) {
+            font-size: 22px;
+        }
+    }
+}
+
+.baner__icon {
+    flex-shrink: 0;
+    @util size(18px);
+    margin-right: 22px;
+    @media (--large) {
+        margin-right: 32px;
+    }
+}
+
+.baner__title {
+    font-family: Raleway;
+    font-size: 24px;
+    line-height: 138%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #244018;
+    @media (--large) {
+        color: #ffffff;
+        font-size: 32px;
+        line-height: 135%;
+    }
+}
+
+.baner__right {
+    margin-bottom: 32px;
+    @media (--large) {
+        width: 60vw;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 20px 20px 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+body.webp .baner__right {
+    @media (--large) {
+        background-image: image-set(
+            url('images/bg/members.webp') 1x,
+            url('images/bg/members@2x.webp') 2x
+        );
+    }
+}
+
+body.no-webp .baner__right {
+    @media (--large) {
+        background-image: image-set(
+            url('images/bg/members.png') 1x,
+            url('images/bg/members@2x.png') 2x
+        );
+    }
+}

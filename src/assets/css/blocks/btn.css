@@ -1,0 +1,22 @@
+.btn {
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 135%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #244018;
+    padding: 15px 40px;
+    max-width: 256px;
+    background: #ffffff;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    @media (--medium) {
+        border-radius: 20px;
+        font-size: 32px;
+        max-width: initial;
+        width: 462px;
+        padding: 15px;
+    }
+}

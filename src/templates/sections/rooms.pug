@@ -1,5 +1,5 @@
 section.rooms
-    .container
+    .container.rooms__wrapper
         h2.rooms__title Extras rooms/suits:
         .rooms__baner
             .rooms__baner-left
@@ -12,4 +12,4 @@ section.rooms
                 .rooms__text.rooms__text_white 
                     p The most prestigious suite with magnificent balcony and royal Jacuzzi. 
                     p Our guests can enjoy the spectacula and unique view.
-                img(src=require('images/flower.svg').default).rooms__img
+                object(type="image/svg+xml" data=require('images/flower.svg').default).rooms__img

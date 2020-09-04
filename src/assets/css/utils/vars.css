@@ -1,0 +1,11 @@
+:root {
+    --main-font: 'Open Sans', system-ui, sans-serif;
+    --sub-font: 'Raleway', system-ui, sans-serif;
+
+    --base-font-size: 14px;
+    --line-height: 1;
+
+    --min-width: 320px;
+
+    font: var(--base-font-size) / var(--line-height) var(--main-font);
+}

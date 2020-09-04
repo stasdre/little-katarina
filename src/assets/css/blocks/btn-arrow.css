@@ -1,0 +1,20 @@
+.btn-arrow {
+    display: flex;
+    background: none;
+    font-size: 18px;
+    line-height: 150%;
+    color: #ffffff;
+    text-transform: uppercase;
+    align-items: center;
+}
+.btn-arrow_arrow {
+    &::after {
+        content: '';
+        background: transparent
+            svg-load('arrow_btn.svg', fill=transparent, stroke-width=15px)
+            center center no-repeat;
+        width: 26px;
+        height: 13px;
+        margin-left: 15px;
+    }
+}

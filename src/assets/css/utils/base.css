@@ -1,0 +1,31 @@
+body {
+    background: #fff;
+    color: #fff;
+    font-family: var(--main-font);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-variant-ligatures: none;
+    min-height: 100vh;
+    &.lock {
+        overflow: hidden;
+        @media (--large) {
+            overflow: visible;
+        }
+    }
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    min-width: var(--min-width);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1480px;
+    width: 100%;
+    padding: 0 20px;
+    @util center-block;
+}

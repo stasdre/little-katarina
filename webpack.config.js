@@ -13,7 +13,11 @@ module.exports = () => {
 
     return {
         mode,
-        entry: `${srcPath}/index.js`,
+        entry: {
+            home: `${srcPath}/index.js`,
+            contacts: `${srcPath}/contacts.js`,
+            book: `${srcPath}/book.js`,
+        },
         output: {
             filename: fileName,
             path: distPath,
@@ -27,7 +31,6 @@ module.exports = () => {
         devtool: isDev ? 'eval-cheap-module-source-map' : '',
         optimization: {
             moduleIds: 'hashed',
-            runtimeChunk: 'single',
             splitChunks: {
                 chunks: 'all',
             },
@@ -37,7 +40,7 @@ module.exports = () => {
             compress: true,
             hot: true,
             open: true,
-            //host: '0.0.0.0',
+            host: '0.0.0.0',
             historyApiFallback: true,
             noInfo: false,
             overlay: true,
@@ -116,16 +119,19 @@ module.exports = () => {
                 minify: false,
                 filename: 'index.html',
                 template: `${srcPath}/templates/index.pug`,
+                chunks: ['home'],
             }),
             new HtmlWebpackPlugin({
                 minify: false,
                 filename: 'contact-us.html',
                 template: `${srcPath}/templates/contact-us.pug`,
+                chunks: ['contacts'],
             }),
             new HtmlWebpackPlugin({
                 minify: false,
                 filename: 'book.html',
                 template: `${srcPath}/templates/book.pug`,
+                chunks: ['book'],
             }),
             new MiniCssExtractPlugin({
                 filename: `css/[name]-[contenthash].css`,

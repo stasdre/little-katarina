@@ -1,21 +1,29 @@
+const postcssImport = require('postcss-import')
+const postcssUtilities = require('postcss-utilities')
+const postcssAssets = require('postcss-assets')
+const postcssPr = require('postcss-pr')
+const postcssInlineSvg = require('postcss-inline-svg')
+const postcssFontMagician = require('postcss-font-magician')
+const postcssPresetEnv = require('postcss-preset-env')
+const autoprefixer = require('autoprefixer')
+const cssnano = require('cssnano')
+
 module.exports = {
-    plugins: {
-        'postcss-import': {},
-        'postcss-custom-media': {
+    plugins: [
+        postcssImport(),
+        postcssUtilities(),
+        postcssPresetEnv({
+            stage: 0,
             preserve: false,
-        },
-        'postcss-custom-properties': {
-            preserve: false,
-        },
-        'postcss-utilities': {},
-        'postcss-assets': {
-            loadPaths: ['**'],
-            cachebuster: true,
-            relative: true,
-        },
-        'postcss-pr': {},
-        precss: {},
-        'postcss-font-magician': {
+        }),
+        // postcssAssets({
+        //     loadPaths: ['**'],
+        //     cachebuster: true,
+        //     relative: true,
+        // }),
+        postcssPr(),
+        postcssInlineSvg({ paths: ['./src/assets/images/icons'] }),
+        postcssFontMagician({
             variants: {
                 'Open Sans': {
                     400: ['woff2, woff', 'latin-ext, latin'],
@@ -34,9 +42,8 @@ module.exports = {
             },
             foundries: ['google'],
             display: 'swap',
-        },
-        autoprefixer: {},
-        'css-mqpacker': {},
-        cssnano: { preset: 'default' },
-    },
+        }),
+        autoprefixer(),
+        cssnano({ preset: 'default' }),
+    ],
 }

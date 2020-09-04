@@ -1,0 +1,35 @@
+.footer {
+    padding: 41px 0 50px 0;
+    background: #000000;
+    border-top: 1px solid #fff;
+    @media (--large) {
+        padding: 30px 0 33px 0;
+    }
+    & .footer__nav {
+        margin-bottom: 14px;
+        @media (--large) {
+            margin-bottom: 0;
+            width: 50%;
+        }
+    }
+    & .footer__langs {
+        @media (--large) {
+            width: 50%;
+        }
+        & .langs__item {
+            margin-right: 24px;
+        }
+        & .langs__list {
+            @media (--large) {
+                justify-content: flex-end;
+            }
+        }
+    }
+    & .footer__container {
+        @media (--large) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}

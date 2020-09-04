@@ -1,0 +1,20 @@
+@import './init.css';
+
+@import './blocks/main-screen.css';
+@import './blocks/header.css';
+@import './blocks/langs.css';
+@import './blocks/nav.css';
+@import './blocks/fantazi.css';
+@import './blocks/burger.css';
+@import './blocks/about.css';
+@import './blocks/members.css';
+@import './blocks/baner.css';
+@import './blocks/suggestions.css';
+@import './blocks/rooms.css';
+@import './blocks/book.css';
+@import './blocks/btn.css';
+@import './blocks/footer.css';
+
+body {
+    background: #d0b38a;
+}

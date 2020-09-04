@@ -5,3 +5,39 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
     body
+        .wrapper
+            section.contact
+                .container
+                    .contact__header
+                        include ./sections/header.pug
+                    .contact__wrapper
+                        .contact__left
+                            h1.contact__title Contact us:
+                            .contact__address USA, NEW YORK
+                            .contact__email.contact__email_hide-md
+                                a(href="mailto:thelittlekatarina@gmail.com") thelittlekatarina@gmail.com
+                        .contact__right
+                            .contact__map
+                                picture
+                                    source(srcset=require('images/map.webp').default type="image/webp")
+                                    img(src=require('images/map.jpg').default).contact__img
+                            .contact__email.contact__email_hide-large
+                                p Email: 
+                                a(href="mailto:thelittlekatarina@gmail.com") thelittlekatarina@gmail.com
+                            .contact__form
+                                .contact__form-title Or write us by using this form:
+                                form(action="#" method="post").form
+                                    .form__row
+                                        .form__col
+                                            input(type="text" placeholder="Name").form__input
+                                        .form__col
+                                            input(type="email" placeholder="E-mail").form__input
+                                    .form__row
+                                        .form__col
+                                            textarea(placeholder="Message").form__input.form__input_text
+                                    .form__rom
+                                        .form__col
+                                            button(type="submit").btn-arrow.btn-arrow_arrow Send
+                                
+            include ./sections/footer.pug
+        include ./sections/burger.pug

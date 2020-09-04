@@ -2,13 +2,21 @@ section.about
     .container.about__container
         .about__left
             .about__header Have you ever wondered why you have never experienced a fantasy like you imagined in your manly secret biggest dreams?
+            .about__galery
+                +picture('about_1','about/', 'about')
+                +picture('about_2','about/', 'about')
+                .about__info
+                    .about__info-top Relax
+                    .about__info-bottom everything for you
             .about__text 
                 p Your fantasy can come true if you are a serious man who want to experience your sweetest dream indeed. 
-                p Close your eyes and think that you are going on a journey of senses you would never forget. Think and feel that you are the king for a day. 
+                p Close your eyes and think that you are going on a journey of senses you would never forget. 
+                    br
+                    | Think and feel that you are the king for a day. 
                 p Feel intensely what you have never felt before. The cold finger on your skin that becomes warm and warmer. 
                 p Our pretty angels will touch your senses softly as their wings feathers and will grant you the sweetest resurgence.
         .about__right
-            .about__galery
+            .about__galery.about__galery_hide-sm
                 +picture('about_1','about/', 'about')
                 +picture('about_2','about/', 'about')
                 .about__info

@@ -3,11 +3,9 @@ include ./_mixins.pug
 html(lang="en")
     head
         meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, viewport-fit=cover")
         title Document
     body
-        button.burger
-          span
         .wrapper
             include ./sections/main-screen.pug
             main.main
@@ -18,3 +16,4 @@ html(lang="en")
                 include ./sections/extra.pug
                 include ./sections/book.pug
             include ./sections/footer.pug
+        include ./sections/burger.pug

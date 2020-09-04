@@ -1,0 +1,26 @@
+include ../_mixins.pug
+
+- 
+  const nav = [
+    ['Home', '/little-katarina/'],
+    ['Book time', '#'],
+    ['Contact us', '/little-katarina/contact-us.html'],
+  ]
+
+- 
+  const langs = [
+    ['English', '#'],
+    ['France', '#'],
+    ['German', '#'],
+    ['Italian', '#'],
+    ['Spanish', '#'],
+  ]
+
+header.header
+    .header__top
+        nav.nav.header__nav
+            +nav('nav', nav)
+        .langs.header__langs
+            +langs('langs', langs)
+    .header__bottom
+        object(type="image/svg+xml" data=require('images/logo.svg').default).header__logo
