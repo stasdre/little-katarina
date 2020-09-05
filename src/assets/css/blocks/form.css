@@ -45,6 +45,7 @@
         &.form__input_text {
             height: 114px;
             resize: none;
+            overflow: auto;
         }
     }
 }

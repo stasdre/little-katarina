@@ -1,0 +1,160 @@
+.calendar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1160px;
+    width: 100%;
+    margin: 0 auto;
+    & .calendar__control-big {
+        display: none;
+        flex-shrink: 0;
+        background: transparent
+            svg-load('arrow_btn.svg', fill=transparent, stroke-width=15px)
+            center center no-repeat;
+        @util size(20px);
+        margin-top: 100px;
+        &.calendar__control-big_left {
+            transform: rotate(180deg);
+            margin-right: 20px;
+            @media (--mega-large) {
+                margin-right: 60px;
+            }
+        }
+        &.calendar__control-big_right {
+            margin-left: 20px;
+            @media (--mega-large) {
+                margin-left: 80px;
+            }
+        }
+        @media (--large) {
+            display: initial;
+        }
+        @media (--mega-large) {
+            @util size(30px);
+        }
+    }
+    & .calendar__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    & .calendar__item_first {
+        @media (--large) {
+            margin-right: 30px;
+        }
+        @media (--mega-large) {
+            margin-right: 80px;
+        }
+    }
+    & .calendar__item_second {
+        display: none;
+        @media (--large) {
+            display: flex;
+        }
+    }
+    & .calendar__item-control {
+        display: flex;
+        align-items: center;
+        margin: 0 0 4px 0;
+        @media (--large) {
+            margin: 0 0 40px 0;
+        }
+        & .calendar__current {
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 24px;
+            letter-spacing: 0.12px;
+            color: #eeecf1;
+            @media (--large) {
+                font-size: 16px;
+                padding: 12px;
+                text-align: center;
+                background: #244018;
+                border: 2px solid #2b662e;
+                border-radius: 99px;
+                min-width: 234px;
+                max-height: 53px;
+            }
+        }
+    }
+    & .calendar__control-sm {
+        @util size(30px);
+        background-color: transparent;
+        background-image: svg-load('arrow_calendar.svg', stroke=#2b662e);
+        background-size: 10px 12px;
+        background-position: center;
+        background-repeat: no-repeat;
+        &.calendar__control-sm_disable {
+            background-image: svg-load('arrow_calendar.svg', stroke=#787885);
+        }
+        &.calendar__control-sm_right {
+            transform: rotate(180deg);
+        }
+        @media (--large) {
+            display: none;
+        }
+    }
+    & .calendar__content {
+        align-self: stretch;
+        & table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            & td {
+                text-align: center;
+            }
+            & thead td {
+                @util size(32px);
+                font-weight: bold;
+                font-size: 10px;
+                line-height: 16px;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                color: #eeecf1;
+                @media (--mega-large) {
+                    font-size: 12px;
+                    @util size(52px);
+                }
+            }
+            & tbody td {
+                padding: 5px 2px;
+                @media (--mega-large) {
+                    padding: 8px 6px;
+                }
+                & a.calendar__link {
+                    margin: 0 auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @util size(32px);
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 22px;
+                    letter-spacing: 0.22px;
+                    color: #a9d3ab;
+                    cursor: pointer;
+                    &.calendar__link_disable {
+                        color: #3c3844;
+                        &:active,
+                        &:hover {
+                            background: none;
+                            border: 0;
+                            cursor: not-allowed;
+                        }
+                    }
+                    &:active,
+                    &:hover {
+                        background: #1f4921;
+                        border: 2px solid #2b662e;
+                        border-radius: 50%;
+                    }
+                    @media (--mega-large) {
+                        font-size: 16px;
+                        @util size(52px);
+                    }
+                }
+            }
+        }
+    }
+}

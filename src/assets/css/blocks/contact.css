@@ -41,13 +41,10 @@ body.no-webp .contact {
 }
 
 .contact {
-    flex: 1;
+    flex: 1 1 auto;
     background-size: cover;
     background-repeat: no-repeat;
     padding-bottom: 50px;
-    @media (--extra-large) {
-        background-attachment: fixed;
-    }
     @media (--large) {
         padding-bottom: 154px;
     }
@@ -169,7 +166,7 @@ body.no-webp .contact {
     }
     & .contact__left {
         @media (--large) {
-            flex: 0 1 22.4%;
+            flex: 1 0 22.4%;
             margin-right: 60px;
         }
     }

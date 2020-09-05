@@ -5,3 +5,16 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
     body
+        .wrapper
+            section.booking
+                .booking__wrapper
+                    .container
+                        .booking__header
+                            include ./sections/header.pug
+                    .booking__calendar
+                        .container
+                            h2.booking__title Book a time - 
+                                span pick a day:
+                            include ./sections/calendar.pug
+            include ./sections/footer.pug
+        include ./sections/burger.pug

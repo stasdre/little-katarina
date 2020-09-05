@@ -1,0 +1,10 @@
+@import './init.css';
+
+@import './blocks/header.css';
+@import './blocks/langs.css';
+@import './blocks/nav.css';
+@import './blocks/burger.css';
+@import './blocks/footer.css';
+
+@import './blocks/booking.css';
+@import './blocks/calendar.css';
