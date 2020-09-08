@@ -1,13 +1,20 @@
 .calendar {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
     max-width: 1160px;
     width: 100%;
     margin: 0 auto;
+    @media (--large) {
+        min-height: 400px;
+    }
+    @media (--mega-large) {
+        min-height: 580px;
+    }
     & .calendar__control-big {
         display: none;
         flex-shrink: 0;
+        font-size: 0;
         background: transparent
             svg-load('arrow_btn.svg', fill=transparent, stroke-width=15px)
             center center no-repeat;
@@ -21,9 +28,9 @@
             }
         }
         &.calendar__control-big_right {
-            margin-left: 20px;
+            /* margin-left: 20px; */
             @media (--mega-large) {
-                margin-left: 80px;
+                /* margin-left: 80px; */
             }
         }
         @media (--large) {
@@ -33,24 +40,19 @@
             @util size(30px);
         }
     }
+    & .calendar__items {
+        display: flex;
+    }
     & .calendar__item {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
-    }
-    & .calendar__item_first {
         @media (--large) {
             margin-right: 30px;
         }
         @media (--mega-large) {
             margin-right: 80px;
-        }
-    }
-    & .calendar__item_second {
-        display: none;
-        @media (--large) {
-            display: flex;
         }
     }
     & .calendar__item-control {
@@ -66,6 +68,7 @@
             line-height: 24px;
             letter-spacing: 0.12px;
             color: #eeecf1;
+            margin: 0 20px;
             @media (--large) {
                 font-size: 16px;
                 padding: 12px;
@@ -75,16 +78,18 @@
                 border-radius: 99px;
                 min-width: 234px;
                 max-height: 53px;
+                margin: 0;
             }
         }
     }
     & .calendar__control-sm {
-        @util size(30px);
+        @util size(25px);
         background-color: transparent;
         background-image: svg-load('arrow_calendar.svg', stroke=#2b662e);
-        background-size: 10px 12px;
+        /* background-size: 10px 12px; */
         background-position: center;
         background-repeat: no-repeat;
+        font-size: 0;
         &.calendar__control-sm_disable {
             background-image: svg-load('arrow_calendar.svg', stroke=#787885);
         }
@@ -122,7 +127,7 @@
                 @media (--mega-large) {
                     padding: 8px 6px;
                 }
-                & a.calendar__link {
+                & .calendar__link {
                     margin: 0 auto;
                     display: flex;
                     align-items: center;
@@ -134,14 +139,18 @@
                     letter-spacing: 0.22px;
                     color: #a9d3ab;
                     cursor: pointer;
+                    background: none;
                     &.calendar__link_disable {
-                        color: #3c3844;
+                        color: #7a7585 !important;
                         &:active,
                         &:hover {
-                            background: none;
-                            border: 0;
-                            cursor: not-allowed;
+                            background: none !important;
+                            border: 0 !important;
+                            cursor: not-allowed !important;
                         }
+                    }
+                    &.calendar__link_not-current {
+                        color: #3c3844;
                     }
                     &:active,
                     &:hover {

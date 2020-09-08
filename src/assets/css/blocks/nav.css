@@ -49,10 +49,10 @@
 }
 .nav__link {
     font-family: var(--sub-font);
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 19px;
     color: #fff;
     @media (--medium) {
-        font-size: 20px;
+        /* font-size: 20pr; */
     }
 }

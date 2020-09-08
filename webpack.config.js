@@ -2,6 +2,7 @@ const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
 
 module.exports = () => {
     const mode = process.env.NODE_ENV
@@ -48,7 +49,7 @@ module.exports = () => {
         module: {
             rules: [
                 {
-                    test: /\.js$/,
+                    test: /\.(js|jsx)$/,
                     exclude: /node_modules/,
                     loader: 'babel-loader',
                 },
@@ -135,6 +136,9 @@ module.exports = () => {
             }),
             new MiniCssExtractPlugin({
                 filename: `css/[name]-[contenthash].css`,
+            }),
+            new MomentLocalesPlugin({
+                localesToKeep: ['en-gb', 'fr', 'de', 'it', 'es'],
             }),
         ],
     }

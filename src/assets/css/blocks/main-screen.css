@@ -135,14 +135,14 @@ body.no-webp .main-screen {
 .main-screen__title {
     position: relative;
     font-family: var(--sub-font);
-    font-size: 28px;
+    font-size: 28pr;
     text-align: center;
     font-weight: 300;
     line-height: 135%;
     padding: 0 5%;
     @media (--medium) {
         max-width: 435px;
-        font-size: 38px;
+        /* font-size: 38px; */
         font-weight: 600;
         text-align: left;
         padding: 0;
@@ -155,8 +155,10 @@ body.no-webp .main-screen {
         margin-bottom: 80px;
     }
     @media (--extra-large), (--extra-large-portrait) {
-        font-size: 44px;
         margin-bottom: 90px;
+    }
+    @media (--big) {
+        font-size: 2.2rem;
     }
 }
 

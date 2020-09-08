@@ -31,18 +31,18 @@
 }
 .baner__text {
     font-family: Raleway;
-    font-size: 14px;
-    line-height: 25px;
+    font-size: 1rem;
+    line-height: 25pr;
     color: #ffffff;
-    @media (--large) {
-        font-size: 20px;
-        line-height: 32px;
+    @media (--mega-large) {
+        /* font-size: 1.25rem; */
+        /*line-height: 32px; */
     }
     & span {
-        font-size: 16px;
+        font-size: 1.25rem;
         font-weight: 800;
         @media (--large) {
-            font-size: 22px;
+            /* font-size: 22px; */
         }
     }
 }
@@ -58,14 +58,14 @@
 
 .baner__title {
     font-family: Raleway;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 138%;
     text-align: center;
     letter-spacing: 0.02em;
     color: #244018;
     @media (--large) {
         color: #ffffff;
-        font-size: 32px;
+        /* font-size: 32px; */
         line-height: 135%;
     }
 }

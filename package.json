@@ -11,14 +11,21 @@
         "lint": "eslint ./src/**"
     },
     "dependencies": {
+        "classnames": "^2.2.6",
         "core-js": "^3.6.5",
+        "moment": "^2.27.0",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-transition-group": "^4.4.1",
         "supports-webp": "^2.0.1",
         "svgxuse": "^1.2.6",
         "tiny-slider": "^2.9.3"
     },
     "devDependencies": {
         "@babel/core": "^7.11.4",
+        "@babel/plugin-proposal-class-properties": "^7.10.4",
         "@babel/preset-env": "^7.11.0",
+        "@babel/preset-react": "^7.10.4",
         "autoprefixer": "^9.8.6",
         "babel-loader": "^8.1.0",
         "clean-webpack-plugin": "^3.0.0",
@@ -37,6 +44,7 @@
         "gh-pages": "^3.1.0",
         "html-webpack-plugin": "^4.3.0",
         "mini-css-extract-plugin": "^0.10.0",
+        "moment-locales-webpack-plugin": "^1.2.0",
         "postcss-assets": "^5.0.0",
         "postcss-font-magician": "^2.3.1",
         "postcss-import": "^12.0.1",
@@ -46,6 +54,7 @@
         "postcss-preset-env": "^6.7.0",
         "postcss-utilities": "^0.8.4",
         "prettier": "^2.1.0",
+        "prop-types": "^15.7.2",
         "pug": "^3.0.0",
         "pug-loader": "^2.4.0",
         "style-loader": "^1.2.1",

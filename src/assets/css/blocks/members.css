@@ -8,12 +8,12 @@
 .members__title {
     font-family: Raleway;
     font-weight: 800;
-    font-size: 16px;
+    font-size: 1.15rem;
     line-height: 32px;
     color: #244018;
     margin-bottom: 12px;
     @media (--large) {
-        font-size: 22px;
+        /* font-size: 22px; */
         margin-bottom: 21px;
     }
 }
@@ -30,7 +30,7 @@
 .members__item {
     display: flex;
     align-items: baseline;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 23px;
     letter-spacing: 0.02em;
     color: #181818;
@@ -38,7 +38,7 @@
     margin-bottom: 15px;
     width: 60%;
     @media (--large) {
-        font-size: 20px;
+        /* font-size: 20px; */
         line-height: 32px;
         width: initial;
         margin-bottom: 0;
@@ -64,12 +64,12 @@
     }
 }
 .members__text {
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 32px;
     letter-spacing: 0.02em;
     color: #2c2e26;
     @media (--large) {
-        font-size: 18px;
+        /* font-size: 18px; */
     }
 }
 

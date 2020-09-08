@@ -55,15 +55,21 @@
 .fantazi__text {
     font-family: Raleway;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 135%;
     color: #335125;
     margin-bottom: 10px;
-    @media (--medium) {
-        font-size: 32px;
+    &:hover {
+        text-decoration: underline;
+    }
+    @media (--large) {
+        font-size: 1.5rem;
+    }
+    @media (--big) {
+        font-size: 1.8rem;
     }
     @media (--small-landscape), (--medium-landscape) {
-        font-size: 18px;
+        /* font-size: 18px; */
     }
 }
 .fantazi__btn {

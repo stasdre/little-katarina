@@ -28,4 +28,10 @@ body {
     width: 100%;
     padding: 0 20px;
     @util center-block;
+    @media (--mega-large) {
+        width: 90vw;
+    }
+    @media (--big) {
+        width: 100%;
+    }
 }

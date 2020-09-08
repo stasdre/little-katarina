@@ -8,4 +8,13 @@
     --min-width: 320px;
 
     font: var(--base-font-size) / var(--line-height) var(--main-font);
+    @media (--large) {
+        font: 16px / var(--line-height) var(--main-font);
+    }
+    @media (--mega-large) {
+        font: 18px / var(--line-height) var(--main-font);
+    }
+    @media (--big) {
+        font: 20px / var(--line-height) var(--main-font);
+    }
 }

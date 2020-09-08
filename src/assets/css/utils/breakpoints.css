@@ -23,3 +23,4 @@
 @custom-media --extra-large (width>1024px);
 @custom-media --extra-large-portrait (width>=1024px) and (orientation: portrait);
 @custom-media --mega-large (width>=1200px);
+@custom-media --big (width>=1920px);

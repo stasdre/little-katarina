@@ -1,7 +1,7 @@
 .btn {
     font-family: Raleway;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 1.4rem;
     line-height: 135%;
     letter-spacing: 0.01em;
     text-align: center;
@@ -14,7 +14,7 @@
     border-radius: 16px;
     @media (--medium) {
         border-radius: 20px;
-        font-size: 32px;
+        /* font-size: 32px; */
         max-width: initial;
         width: 462px;
         padding: 15px;

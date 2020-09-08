@@ -6,6 +6,8 @@
                 "corejs": { "version": 3, "proposals": true },
                 "useBuiltIns": "usage"
             }
-        ]
-    ]
+        ],
+        "@babel/preset-react"
+    ],
+    "plugins": ["@babel/plugin-proposal-class-properties"]
 }
