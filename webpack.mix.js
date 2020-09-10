@@ -91,6 +91,10 @@ mix.postCss('src/assets/css/home.css', 'public/css', postCssConfig)
 mix.postCss('src/assets/css/contact.css', 'public/css', postCssConfig)
 mix.postCss('src/assets/css/book.css', 'public/css', postCssConfig)
 
+mix.copy('src/assets/images/icons/*.svg', 'public/images/icons')
+mix.copy('src/assets/images/*.*', 'public/images')
+mix.copy('src/assets/images/about/*.*', 'public/images/about')
+
 if (mix.inProduction()) {
     mix.version()
 }
