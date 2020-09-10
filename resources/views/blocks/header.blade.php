@@ -8,6 +8,6 @@
     </div>
   </div>
   <div class="header__bottom">
-    <object class="header__logo" type="image/svg+xml" data="{{asset('images/logo.svg')}}"></object>
+    <object class="header__logo" type="image/svg+xml" data="/images/logo.svg"></object>
   </div>
 </header>

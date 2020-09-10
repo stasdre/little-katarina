@@ -28,7 +28,7 @@
       <div class="contact__right">
         <div class="contact__map">
           <picture>
-            <source srcset="{{asset('images/map.webp')}}" type="image/webp"/><img class="contact__img" src="{{asset('images/map.jpg')}}"/>
+            <source srcset="/images/map.webp" type="image/webp"/><img class="contact__img" src="/images/map.jpg"/>
           </picture>
         </div>
         <div class="contact__email contact__email_hide-large">

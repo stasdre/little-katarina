@@ -21,14 +21,14 @@
         @include('blocks.header')
       </div>
       <h1 class="main-screen__title">It is your paradise of pleasures
-        <object class="main-screen__icon" type="image/svg+xml" data="{{asset('images/main-screen.svg')}}"></object>
+        <object class="main-screen__icon" type="image/svg+xml" data="/images/main-screen.svg"></object>
       </h1>
     </div>
     <div class="main-screen__fantazi fantazi">
       <div class="fantazi__left">
         <picture class="fantazi__picture">
-          <source srcset="{{asset('images/fantazi.webp')}} 1x, {{asset('images/fantazi@2x.webp')}} 2x" type="image/webp"/>
-            <img class="fantazi__img" src="{{asset('images/fantazi.jpg')}}" srcset="{{asset('images/fantazi@2x.jpg')}} 2x"/>
+          <source srcset="/images/fantazi.webp 1x, /images/fantazi@2x.webp 2x" type="image/webp"/>
+            <img class="fantazi__img" src="/images/fantazi.jpg" srcset="/images/fantazi@2x.jpg 2x"/>
         </picture>
       </div>
       <div class="fantazi__right">
@@ -48,10 +48,10 @@
       <div class="about__header">Have you ever wondered why you have never experienced a fantasy like you imagined in your manly secret biggest dreams?</div>
       <div class="about__galery">
         <picture class="about__picture">
-          <source srcset="{{asset('images/about/IMG_4933.webp')}} 1x, {{asset('images/about/IMG_4933@2x.webp')}} 2x" type="image/webp"/><img class="about__img" src="{{asset('images/about/IMG_4933.jpg')}}" srcset="{{asset('images/about/IMG_4933@2x.jpg')}} 2x"/>
+          <source srcset="/images/about/IMG_4933.webp 1x, /images/about/IMG_4933@2x.webp 2x" type="image/webp"/><img class="about__img" src="/images/about/IMG_4933.jpg" srcset="/images/about/IMG_4933@2x.jpg 2x"/>
         </picture>
         <picture class="about__picture">
-          <source srcset="{{asset('images/about/IMG_4935.webp')}} 1x, {{asset('images/about/IMG_4935@2x.webp')}} 2x" type="image/webp"/><img class="about__img" src="{{asset('images/about/IMG_4935.jpg')}}" srcset="{{asset('images/about/IMG_4935@2x.jpg')}} 2x"/>
+          <source srcset="/images/about/IMG_4935.webp 1x, /images/about/IMG_4935@2x.webp 2x" type="image/webp"/><img class="about__img" src="/images/about/IMG_4935.jpg" srcset="/images/about/IMG_4935@2x.jpg 2x"/>
         </picture>
         <div class="about__info">
           <div class="about__info-top">Relax</div>
@@ -68,10 +68,10 @@
     <div class="about__right">
       <div class="about__galery about__galery_hide-sm">
         <picture class="about__picture">
-          <source srcset="{{asset('images/about/IMG_4933.webp')}} 1x, {{asset('images/about/IMG_4933@2x.webp')}} 2x" type="image/webp"/><img class="about__img" src="{{asset('images/about/IMG_4933.jpg')}}" srcset="{{asset('images/about/IMG_4933@2x.jpg')}} 2x"/>
+          <source srcset="/images/about/IMG_4933.webp 1x, /images/about/IMG_4933@2x.webp 2x" type="image/webp"/><img class="about__img" src="/images/about/IMG_4933.jpg" srcset="/images/about/IMG_4933@2x.jpg 2x"/>
         </picture>
         <picture class="about__picture">
-          <source srcset="{{asset('images/about/IMG_4935.webp')}} 1x, {{asset('images/about/IMG_4935@2x.webp')}} 2x" type="image/webp"/><img class="about__img" src="{{asset('images/about/IMG_4935.jpg')}}" srcset="{{asset('images/about/IMG_4935@2x.jpg')}} 2x"/>
+          <source srcset="/images/about/IMG_4935.webp 1x, /images/about/IMG_4935@2x.webp 2x" type="image/webp"/><img class="about__img" src="/images/about/IMG_4935.jpg" srcset="/images/about/IMG_4935@2x.jpg 2x"/>
         </picture>
         <div class="about__info">
           <div class="about__info-top">Relax</div>
@@ -87,7 +87,7 @@
     <div class="baner members__baner">
       <div class="baner__left">
         <svg class="baner__icon">
-          <use xlink:href="{{asset('images/icons/sprite.svg')}}#Info"></use>
+          <use xlink:href="/images/icons/sprite.svg#Info"></use>
         </svg>
         <div class="baner__text"> <span>Very limited members club, </span>only for classy men who wants to experience heaven on earth.</div>
       </div>
@@ -168,7 +168,7 @@
           <p>The most prestigious suite with magnificent balcony and royal Jacuzzi. </p>
           <p>Our guests can enjoy the spectacula and unique view.</p>
         </div>
-        <object class="rooms__img" type="image/svg+xml" data="{{asset('images/flower.svg')}}"></object>
+        <object class="rooms__img" type="image/svg+xml" data="/images/flower.svg"></object>
       </div>
     </div>
   </div>
