@@ -94,8 +94,8 @@
 body.webp .baner__right {
     @media (--large) {
         background-image: image-set(
-            url('images/bg/members.webp') 1x,
-            url('images/bg/members@2x.webp') 2x
+            url('../images/bg/members.webp') 1x,
+            url('../images/bg/members@2x.webp') 2x
         );
     }
 }
@@ -103,8 +103,8 @@ body.webp .baner__right {
 body.no-webp .baner__right {
     @media (--large) {
         background-image: image-set(
-            url('images/bg/members.png') 1x,
-            url('images/bg/members@2x.png') 2x
+            url('../images/bg/members.png') 1x,
+            url('../images/bg/members@2x.png') 2x
         );
     }
 }

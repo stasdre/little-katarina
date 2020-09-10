@@ -70,7 +70,7 @@ const Month = ({ current, handelNext, handelPrev, calendarData }) => {
                                                     to={
                                                         isDisable || isBookedDay
                                                             ? '#'
-                                                            : `/little-katarina/book/${day.format(
+                                                            : `/booking/${day.format(
                                                                   'YYYY/M/D'
                                                               )}`
                                                     }

@@ -1,4 +1,4 @@
 import 'svgxuse'
 import './assets/js/webp-checker'
 import './assets/js/burger'
-import './assets/css/contact.css'
+// import './assets/css/contact.css'

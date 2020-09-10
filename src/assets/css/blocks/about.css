@@ -3,7 +3,7 @@ body.webp .about {
         url('images/bg/about_xs.webp') 1x,
         url('images/bg/about_xs@2x.webp') 2x
     ); */
-    background-image: url('images/bg/about_2.webp');
+    background-image: url('../images/bg/about_2.webp');
     /* @media (--small) {
         background-image: image-set(
             url('images/bg/about_sm.webp') 1x,
@@ -24,7 +24,7 @@ body.no-webp .about {
         url('images/bg/about_xs.jpg') 1x,
         url('images/bg/about_xs@2x.jpg') 2x
     ); */
-    background-image: url('images/bg/about_2.jpg');
+    background-image: url('../images/bg/about_2.jpg');
     /* @media (--small) {
         background-image: image-set(
             url('images/bg/about_sm.jpg') 1x,

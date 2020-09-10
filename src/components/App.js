@@ -6,15 +6,8 @@ import Time from './Time'
 export default () => (
     <BrowserRouter>
         <Switch>
-            <Route
-                path="/little-katarina/book/:year/:month/:day"
-                component={Time}
-            ></Route>
-            <Route
-                exact
-                path="/little-katarina/book.html"
-                component={Calendar}
-            ></Route>
+            <Route path="/booking/:year/:month/:day" component={Time}></Route>
+            <Route exact path="/booking" component={Calendar}></Route>
         </Switch>
     </BrowserRouter>
 )

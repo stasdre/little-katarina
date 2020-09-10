@@ -1,55 +1,55 @@
 body.webp .main-screen {
     background-image: image-set(
-        url('images/bg/head_xs.webp') 1x,
-        url('images/bg/head_xs@2x.webp') 2x
+        url('../images/bg/head_xs.webp') 1x,
+        url('../images/bg/head_xs@2x.webp') 2x
     );
 
     @media (--small) {
         background-image: image-set(
-            url('images/bg/head_sm.webp') 1x,
-            url('images/bg/head_sm@2x.webp') 2x
+            url('../images/bg/head_sm.webp') 1x,
+            url('../images/bg/head_sm@2x.webp') 2x
         );
     }
 
     @media (--large) {
         background-image: image-set(
-            url('images/bg/head.webp') 1x,
-            url('images/bg/head@2x.webp') 2x
+            url('../images/bg/head.webp') 1x,
+            url('../images/bg/head@2x.webp') 2x
         );
     }
 
     @media (--extra-large-portrait) {
         background-image: image-set(
-            url('images/bg/head_sm.webp') 1x,
-            url('images/bg/head_sm@2x.webp') 2x
+            url('../images/bg/head_sm.webp') 1x,
+            url('../images/bg/head_sm@2x.webp') 2x
         );
     }
 }
 
 body.no-webp .main-screen {
     background-image: image-set(
-        url('images/bg/head_xs.jpg') 1x,
-        url('images/bg/head_xs@2x.jpg') 2x
+        url('../images/bg/head_xs.jpg') 1x,
+        url('../images/bg/head_xs@2x.jpg') 2x
     );
 
     @media (--small) {
         background-image: image-set(
-            url('images/bg/head_sm.jpg') 1x,
-            url('images/bg/head_sm@2x.jpg') 2x
+            url('../images/bg/head_sm.jpg') 1x,
+            url('../images/bg/head_sm@2x.jpg') 2x
         );
     }
 
     @media (--large) {
         background-image: image-set(
-            url('images/bg/head.jpg') 1x,
-            url('images/bg/head@2x.jpg') 2x
+            url('../images/bg/head.jpg') 1x,
+            url('../images/bg/head@2x.jpg') 2x
         );
     }
 
     @media (--extra-large-portrait) {
         background-image: image-set(
-            url('images/bg/head_sm.jpg') 1x,
-            url('images/bg/head_sm@2x.jpg') 2x
+            url('../images/bg/head_sm.jpg') 1x,
+            url('../images/bg/head_sm@2x.jpg') 2x
         );
     }
 }

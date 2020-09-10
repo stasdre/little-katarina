@@ -10,8 +10,8 @@ const Time = ({ setTime, timeData, clearTime }) => {
     const prevDate = selectedData.clone().subtract(1, 'day')
     const prevDateLink = prevDate.isBefore(new Date(), 'day')
         ? `#`
-        : `/little-katarina/book/${prevDate.format('YYYY/M/D')}`
-    const nextDateLink = `/little-katarina/book/${selectedData
+        : `/booking/${prevDate.format('YYYY/M/D')}`
+    const nextDateLink = `/booking/${selectedData
         .clone()
         .add(1, 'day')
         .format('YYYY/M/D')}`
@@ -263,7 +263,7 @@ const Time = ({ setTime, timeData, clearTime }) => {
             </div>
             <div className="time__nav">
                 <Link
-                    to="/little-katarina/book.html"
+                    to="/booking"
                     className="time__nav-link time__nav-link_back"
                 >
                     Back
