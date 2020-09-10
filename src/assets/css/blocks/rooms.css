@@ -65,6 +65,9 @@ body.no-webp .rooms {
         text-align: left;
         margin-bottom: 64px;
     }
+    @media (--mega-large) {
+        font-size: 1.5rem;
+    }
 }
 .rooms__baner {
     @media (--large) {
@@ -88,6 +91,9 @@ body.no-webp .rooms {
         width: 43%;
         border-radius: 18px 0 0 18px;
         padding: 39px 40px 55px 41px;
+    }
+    @media (--mega-large) {
+        padding: 30px 30px 55px 41px;
     }
 }
 .rooms__baner-right {
@@ -130,6 +136,9 @@ body.no-webp .rooms {
         line-height: 33px;
         margin-bottom: 30px;
     }
+    @media (--mega-large) {
+        font-size: 1.1rem;
+    }
 }
 .rooms__text {
     font-size: 1rem;
@@ -139,6 +148,9 @@ body.no-webp .rooms {
     opacity: 0.7;
     @media (--large) {
         /* font-size: 20px; */
+    }
+    @media (--mega-large) {
+        font-size: 0.9rem;
     }
 }
 

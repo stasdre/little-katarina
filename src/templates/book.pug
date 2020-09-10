@@ -2,7 +2,7 @@
 html(lang="en")
     head
         meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=no")
         title Document
     body
         .wrapper
@@ -12,9 +12,6 @@ html(lang="en")
                         .booking__header
                             include ./sections/header.pug
                     .booking__calendar
-                        .container
-                            h2.booking__title Book a time - 
-                                span pick a day:
-                            #calendar
+                        #app.container
             include ./sections/footer.pug
         include ./sections/burger.pug

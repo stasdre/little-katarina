@@ -1,9 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import classNames from 'classnames'
+import { Link } from 'react-router-dom'
+import { getCalendarData } from '../modules/Calendar'
 
-const Month = ({ current, handelNext, handelPrev }) => {
+const Month = ({ current, handelNext, handelPrev, calendarData }) => {
     moment.locale('en-gb')
     const momentData = moment(current, 'M/YYYY')
     const startDay = momentData.clone().startOf('month').startOf('week')
@@ -18,7 +21,6 @@ const Month = ({ current, handelNext, handelPrev }) => {
                 .map(() => day.add(1, 'day').clone())
         )
     }
-
     return (
         <div className="calendar__item">
             <div className="calendar__item-control">
@@ -48,27 +50,53 @@ const Month = ({ current, handelNext, handelPrev }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {calendar.map((week) => (
-                            <tr key={week.toString()}>
-                                {week.map((day) => (
-                                    <td key={day.toString()}>
-                                        <button
-                                            className={classNames({
-                                                calendar__link: true,
-                                                //calendar__link_disable: true,
-                                                // 'calendar__link_not-current': day.diff(
-                                                //     startDay,
-                                                //     'months',
-                                                //     true
-                                                // ),
-                                            })}
-                                        >
-                                            {day.format('D').toString()}
-                                        </button>
-                                    </td>
-                                ))}
-                            </tr>
-                        ))}
+                        {calendar.map((week) => {
+                            return (
+                                <tr key={week.toString()}>
+                                    {week.map((day) => {
+                                        const isDisable = day.isBefore(
+                                            new Date(),
+                                            'day'
+                                        )
+                                        const isBookedDay =
+                                            calendarData.bookedDays.indexOf(
+                                                day.format('YYYY-MM-DD')
+                                            ) < 0
+                                                ? false
+                                                : true
+                                        return (
+                                            <td key={day.toString()}>
+                                                <Link
+                                                    to={
+                                                        isDisable || isBookedDay
+                                                            ? '#'
+                                                            : `/little-katarina/book/${day.format(
+                                                                  'YYYY/M/D'
+                                                              )}`
+                                                    }
+                                                    className={classNames({
+                                                        calendar__link: true,
+                                                        calendar__link_disable: isDisable,
+                                                        calendar__link_booked: isBookedDay,
+                                                        'calendar__link_not-current':
+                                                            day.isBefore(
+                                                                momentData,
+                                                                'month'
+                                                            ) ||
+                                                            day.isAfter(
+                                                                momentData,
+                                                                'month'
+                                                            ),
+                                                    })}
+                                                >
+                                                    {day.format('D').toString()}
+                                                </Link>
+                                            </td>
+                                        )
+                                    })}
+                                </tr>
+                            )
+                        })}
                     </tbody>
                 </table>
             </div>
@@ -80,4 +108,7 @@ Month.propTypes = {
     current: PropTypes.string.isRequired,
 }
 
-export default Month
+export default connect(
+    (state) => ({ calendarData: getCalendarData(state) }),
+    {}
+)(Month)

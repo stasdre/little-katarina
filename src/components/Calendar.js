@@ -1,4 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import {
+    nextCalendar,
+    prevCalendar,
+    setCalendars,
+    getCalendarData,
+} from '../modules/Calendar'
 import Month from './Month'
 import moment from 'moment'
 
@@ -7,76 +14,78 @@ const momentFormat = 'M/YYYY'
 class Calendar extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            calendars: [],
-            lastCurrentMonth: moment().format(momentFormat),
-            showCalendars: 1,
-            transitionState: false,
-            isPrev: false,
-            isNext: true,
-        }
     }
 
     handelNext = () => {
-        const { lastCurrentMonth, showCalendars, transitionState } = this.state
+        const { calendarData, nextCalendar } = this.props
 
-        const newMomentFormat = moment(lastCurrentMonth, momentFormat).add(
-            showCalendars,
-            'month'
-        )
+        const newMomentFormat = moment(
+            calendarData.lastCurrentMonth,
+            momentFormat
+        ).add(calendarData.showCalendars, 'month')
 
-        this.setState(
-            {
+        if (!this.isMobile()) {
+            nextCalendar({
                 lastCurrentMonth: newMomentFormat.format(momentFormat),
-                isPrev: true,
-                transitionState: !transitionState,
-            },
-            this.updateCalendars
-        )
+                calendars: [
+                    newMomentFormat,
+                    newMomentFormat.clone().add(1, 'month'),
+                ],
+            })
+        } else {
+            nextCalendar({
+                lastCurrentMonth: newMomentFormat.format(momentFormat),
+                calendars: [newMomentFormat],
+            })
+        }
     }
 
     handelPrev = () => {
-        const {
-            isPrev,
-            lastCurrentMonth,
-            showCalendars,
-            transitionState,
-        } = this.state
+        const { calendarData, prevCalendar } = this.props
 
-        if (!isPrev) return
+        if (!calendarData.isPrev) return
 
-        const newMomentFormat = moment(lastCurrentMonth, momentFormat).subtract(
-            showCalendars,
-            'month'
-        )
-        this.setState((state) => {
-            return {
-                isPrev: !newMomentFormat.isSame(moment().startOf('month')),
+        const newMomentFormat = moment(
+            calendarData.lastCurrentMonth,
+            momentFormat
+        ).subtract(calendarData.showCalendars, 'month')
+
+        if (!this.isMobile()) {
+            prevCalendar({
                 lastCurrentMonth: newMomentFormat.format(momentFormat),
-                transitionState: !transitionState,
-            }
-        }, this.updateCalendars)
+                calendars: [
+                    newMomentFormat,
+                    newMomentFormat.clone().add(1, 'month'),
+                ],
+                isPrev: !newMomentFormat.isSame(moment().startOf('month')),
+            })
+        } else {
+            prevCalendar({
+                lastCurrentMonth: newMomentFormat.format(momentFormat),
+                calendars: [newMomentFormat],
+                isPrev: !newMomentFormat.isSame(moment().startOf('month')),
+            })
+        }
     }
 
     updateCalendars = () => {
-        const { lastCurrentMonth } = this.state
-        const momentInitial = moment(lastCurrentMonth, momentFormat)
+        const { setCalendars, calendarData } = this.props
+        console.log(calendarData.lastCurrentMonth)
+        const momentInitial = moment(
+            calendarData.lastCurrentMonth,
+            momentFormat
+        )
 
         if (!this.isMobile()) {
-            this.setState((state) => {
-                return {
-                    showCalendars: 2,
-                    calendars: [
-                        momentInitial,
-                        momentInitial.clone().add(1, 'month'),
-                    ],
-                }
+            setCalendars({
+                calendars: [
+                    momentInitial,
+                    momentInitial.clone().add(1, 'month'),
+                ],
+                showCalendars: 2,
             })
         } else {
-            this.setState({
-                showCalendars: 1,
-                calendars: [momentInitial],
-            })
+            setCalendars({ calendars: [momentInitial], showCalendars: 1 })
         }
     }
 
@@ -92,33 +101,42 @@ class Calendar extends React.Component {
     }
 
     render() {
-        const { calendars, transitionState } = this.state
+        const { calendarData } = this.props
 
         return (
-            <div className="calendar">
-                <button
-                    className="calendar__control-big calendar__control-big_left"
-                    onClick={this.handelPrev}
-                >
-                    Prev
-                </button>
-                {calendars.map((calendar, index) => (
-                    <Month
-                        key={calendar.toString()}
-                        current={calendar.format('M/YYYY')}
-                        handelNext={this.handelNext}
-                        handelPrev={this.handelPrev}
-                    />
-                ))}
-                <button
-                    className="calendar__control-big calendar__control-big_right"
-                    onClick={this.handelNext}
-                >
-                    Next
-                </button>
-            </div>
+            <>
+                <h2 className="booking__title">
+                    Book <span>4 hours minimum session:</span>
+                </h2>
+                <div className="calendar">
+                    <button
+                        className="calendar__control-big calendar__control-big_left"
+                        onClick={this.handelPrev}
+                    >
+                        Prev
+                    </button>
+                    {calendarData.calendars.map((calendar, index) => (
+                        <Month
+                            key={calendar.toString()}
+                            current={calendar.format('M/YYYY')}
+                            handelNext={this.handelNext}
+                            handelPrev={this.handelPrev}
+                        />
+                    ))}
+                    <button
+                        className="calendar__control-big calendar__control-big_right"
+                        onClick={this.handelNext}
+                    >
+                        Next
+                    </button>
+                </div>
+            </>
         )
     }
 }
 
-export default Calendar
+export default connect((state) => ({ calendarData: getCalendarData(state) }), {
+    setCalendars,
+    nextCalendar,
+    prevCalendar,
+})(Calendar)

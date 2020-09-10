@@ -14,12 +14,7 @@
     <path d="M16.743 11.906h.918v7.084H12.51v-7.084h.918V6.702h-.918V.045h5.151v6.657h-.918v5.204z" fill="#fff"></path>
     <path d="M16.76.045h-3.35V18.99h3.35V.045z" fill="#F42525"></path>
   </symbol>
-  <symbol viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg" id="France">
-    <path d="M30 0H0v19h30V0z" fill="#2E4593"></path>
-    <path d="M30 0H15.573v19H30V0z" fill="#F42525"></path>
-    <path d="M20.108.027H9.973v18.9h10.135V.027z" fill="#fff"></path>
-  </symbol>
-  <symbol viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" id="German">
+  <symbol viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="German">
     <path d="M29.982 0H0V19H29.982V0Z" fill="#28292B"/>
 <path d="M29.982 9.18115H0V18.9999H29.982V9.18115Z" fill="#FFF915"/>
 <path d="M30 6.24829H0V12.6423H30V6.24829Z" fill="#DD3131"/>
@@ -29,13 +24,25 @@
     <path fill-rule="evenodd" clip-rule="evenodd" d="M10 16H11.003C11.5536 16 12 16.4439 12 17C12 17.5523 11.547 18 11.003 18H6.99703C6.44639 18 6 17.5561 6 17C6 16.4477 6.45304 16 6.99703 16H8V7H7.00937C6.45191 7 6 6.55614 6 6C6 5.44772 6.44335 5 7.00937 5H8.99063C9.54809 5 10 5.44386 10 6V16ZM10 1.5C10 0.671573 9.32843 0 8.5 0C7.67157 0 7 0.671573 7 1.5C7 2.32843 7.67157 3 8.5 3C9.32843 3 10 2.32843 10 1.5Z" fill="white"/>
 
   </symbol>
-  <symbol viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg" id="Italian">
-    <path d="M30 0H0v19h30V0z" fill="#34A53E"></path>
-    <path d="M30 0H15.573v19H30V0z" fill="#E52525"></path>
-    <path d="M20.108.027H9.973v18.89h10.135V.028z" fill="#fff"></path>
+  <symbol viewBox="0 0 9 6"  xmlns="http://www.w3.org/2000/svg" id="Dubai">
+<rect width="12" height="6" fill="#00732f" id="green"/>
+<rect width="12" height="4" y="2" fill="#fff"/>
+<rect width="12" height="2" y="4"/>
+<rect width="3" height="6" fill="#f00" id="red"/>
   </symbol>
-  <symbol viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg" id="Spanish">
-    <path d="M29.982 0H0v19h29.982V0z" fill="#E83434"></path>
-    <path d="M30 5.064H0v8.753h30V5.064z" fill="#FFF915"></path>
+  <symbol viewBox="0 0 640 480"  xmlns="http://www.w3.org/2000/svg" id="Israel">
+  <defs>
+    <clipPath id="il-a">
+      <path fill-opacity=".7" d="M-87.6 0H595v512H-87.6z"/>
+    </clipPath>
+  </defs>
+  <g fill-rule="evenodd" clip-path="url(#il-a)" transform="translate(82.1) scale(.94)">
+    <path fill="#fff" d="M619.4 512H-112V0h731.4z"/>
+    <path fill="#00c" d="M619.4 115.2H-112V48h731.4zm0 350.5H-112v-67.2h731.4zm-483-275l110.1 191.6L359 191.6l-222.6-.8z"/>
+    <path fill="#fff" d="M225.8 317.8l20.9 35.5 21.4-35.3-42.4-.2z"/>
+    <path fill="#00c" d="M136 320.6L246.2 129l112.4 190.8-222.6.8z"/>
+    <path fill="#fff" d="M225.8 191.6l20.9-35.5 21.4 35.4-42.4.1zM182 271.1l-21.7 36 41-.1-19.3-36zm-21.3-66.5l41.2.3-19.8 36.3-21.4-36.6zm151.2 67l20.9 35.5-41.7-.5 20.8-35zm20.5-67l-41.2.3 19.8 36.3 21.4-36.6zm-114.3 0L189.7 256l28.8 50.3 52.8 1.2 32-51.5-29.6-52-55.6.5z"/>
+  </g>
+
   </symbol>
 </svg>

@@ -57,6 +57,9 @@ body.no-webp .about {
     line-height: 135%;
     color: #ffffff;
     margin-bottom: 35px;
+    @media (--mega-large) {
+        font-size: 1.12rem;
+    }
     @media (--big) {
         font-size: 1.5rem;
     }
@@ -79,6 +82,13 @@ body.no-webp .about {
         width: 75vw;
         left: auto;
         margin: 0 auto 40px auto;
+        height: 538px;
+    }
+    @media (--mega-large) {
+        width: 65vw;
+        height: 450px;
+    }
+    @media (--big) {
         height: 538px;
     }
     @media (--small-landscape) {
@@ -118,8 +128,11 @@ body.no-webp .about {
         display: none;
         @media (--mega-large) {
             display: flex;
-            width: 798px;
+            width: 600px;
             justify-content: space-between;
+        }
+        @media (--big) {
+            width: 758px;
         }
     }
 }
@@ -138,6 +151,12 @@ body.no-webp .about {
         padding: 50px 41.2px 30px 18px;
     }
     @media (--mega-large) {
+        top: 50%;
+        left: 36%;
+        bottom: auto;
+        padding: 34px 41.2px 40px 18px;
+    }
+    @media (--big) {
         left: 46%;
         bottom: 19%;
         padding: 59px 52px 40px 30px;
@@ -151,7 +170,7 @@ body.no-webp .about {
         @util size(6px);
         background: #ffffff;
         border-radius: 50%;
-        @media (--medium) {
+        @media (--big) {
             @util size(11px);
             top: 25px;
             right: 24px;
@@ -171,6 +190,9 @@ body.no-webp .about {
         font-size: 30px;
         line-height: 35px;
     }
+    @media (--mega-large) {
+        font-size: 1.5rem;
+    }
 }
 .about__info-bottom {
     font-weight: 600;
@@ -187,6 +209,10 @@ body.no-webp .about {
     font-size: 16pr;
     line-height: 135%;
     color: #ffffff;
+    @media (--mega-large) {
+        font-size: 0.93rem;
+    }
+
     @media (--big) {
         font-size: 1rem;
     }

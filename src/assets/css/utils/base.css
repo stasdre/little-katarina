@@ -29,7 +29,7 @@ body {
     padding: 0 20px;
     @util center-block;
     @media (--mega-large) {
-        width: 90vw;
+        width: 85vw;
     }
     @media (--big) {
         width: 100%;

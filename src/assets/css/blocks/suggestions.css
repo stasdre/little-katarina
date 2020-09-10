@@ -120,6 +120,9 @@ body.no-webp .suggestions {
         line-height: 23px;
         margin-bottom: 30px;
     }
+    @media (--mega-large) {
+        font-size: 0.9rem;
+    }
 }
 .suggestions__point {
     display: flex;
@@ -136,6 +139,10 @@ body.no-webp .suggestions {
         border: 5px solid #244018;
         margin-right: 19px;
         margin-top: 3px;
+    }
+    @media (--mega-large) {
+        @util size(16px);
+        border: 3px solid #244018;
     }
     &::before {
         content: '';

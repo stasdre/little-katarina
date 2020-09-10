@@ -28,6 +28,9 @@
         padding: 42px 32px 42px 20px;
         box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
     }
+    @media (--mega-large) {
+        padding: 20px 20px 20px 20px;
+    }
 }
 .baner__text {
     font-family: Raleway;
@@ -35,14 +38,14 @@
     line-height: 25pr;
     color: #ffffff;
     @media (--mega-large) {
-        /* font-size: 1.25rem; */
+        font-size: 0.9rem;
         /*line-height: 32px; */
     }
     & span {
         font-size: 1.25rem;
         font-weight: 800;
-        @media (--large) {
-            /* font-size: 22px; */
+        @media (--mega-large) {
+            font-size: 1rem;
         }
     }
 }
@@ -67,6 +70,9 @@
         color: #ffffff;
         /* font-size: 32px; */
         line-height: 135%;
+    }
+    @media (--mega-large) {
+        font-size: 1.3rem;
     }
 }
 

@@ -149,6 +149,16 @@
                             cursor: not-allowed !important;
                         }
                     }
+                    &.calendar__link_booked {
+                        color: #3c3844 !important;
+                        background: red !important;
+                        border: 2px solid red !important;
+                        border-radius: 50%;
+                        &:active,
+                        &:hover {
+                            cursor: not-allowed !important;
+                        }
+                    }
                     &.calendar__link_not-current {
                         color: #3c3844;
                     }
