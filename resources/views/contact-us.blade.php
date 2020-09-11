@@ -1,6 +1,6 @@
 @extends('app') 
 
-@section('title', 'Home page') 
+@section('title', 'Contact us') 
 
 @push('styles') 
 <link href="{{ mix('css/contact.css') }}" rel="stylesheet"></head>
