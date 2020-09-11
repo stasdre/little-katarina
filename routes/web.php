@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return redirect(app()->getLocale());
 });
-Route::get('/booking', function () {
-    return view('book');
+
+
+Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}']], function($locale) {
+
+    Route::get('/', function () {
+        return view('home');
+    })->name('home');
+
+    Route::get('/booking', function () {
+        return view('book');
+    })->name('book');
+
+    Route::get('/contact-us', function () {
+        return view('contact-us');
+    })->name('contact');
+
 });
-Route::get('/contact-us', function () {
-    return view('contact-us');
-});
+

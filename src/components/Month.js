@@ -3,14 +3,21 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import classNames from 'classnames'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getCalendarData } from '../modules/Calendar'
 
 const Month = ({ current, handelNext, handelPrev, calendarData }) => {
-    moment.locale('en-gb')
+    const lang = useParams('lang').lang || 'en'
+    moment.locale(lang)
     const momentData = moment(current, 'M/YYYY')
-    const startDay = momentData.clone().startOf('month').startOf('week')
-    const endDay = momentData.clone().endOf('month').endOf('week')
+    const startDay = momentData
+        .clone()
+        .startOf('month')
+        .startOf('week')
+    const endDay = momentData
+        .clone()
+        .endOf('month')
+        .endOf('week')
     const day = startDay.clone().subtract(1, 'day')
     const calendar = []
 
@@ -44,23 +51,24 @@ const Month = ({ current, handelNext, handelPrev, calendarData }) => {
                 <table>
                     <thead>
                         <tr>
-                            {moment.weekdaysShort().map((item) => (
+                            {moment.weekdaysShort().map(item => (
                                 <td key={item}>{item}</td>
                             ))}
                         </tr>
                     </thead>
                     <tbody>
-                        {calendar.map((week) => {
+                        {calendar.map(week => {
                             return (
                                 <tr key={week.toString()}>
-                                    {week.map((day) => {
-                                        const isDisable = day.isBefore(
-                                            new Date(),
-                                            'day'
-                                        )
+                                    {week.map(day => {
+                                        const isDisable = day
+                                            .locale('en')
+                                            .isBefore(new Date(), 'day')
                                         const isBookedDay =
                                             calendarData.bookedDays.indexOf(
-                                                day.format('YYYY-MM-DD')
+                                                day
+                                                    .locale('en')
+                                                    .format('YYYY-MM-DD')
                                             ) < 0
                                                 ? false
                                                 : true
@@ -70,9 +78,11 @@ const Month = ({ current, handelNext, handelPrev, calendarData }) => {
                                                     to={
                                                         isDisable || isBookedDay
                                                             ? '#'
-                                                            : `/booking/${day.format(
-                                                                  'YYYY/M/D'
-                                                              )}`
+                                                            : `/${lang}/booking/${day
+                                                                  .locale('en')
+                                                                  .format(
+                                                                      'YYYY/M/D'
+                                                                  )}`
                                                     }
                                                     className={classNames({
                                                         calendar__link: true,
@@ -89,7 +99,10 @@ const Month = ({ current, handelNext, handelPrev, calendarData }) => {
                                                             ),
                                                     })}
                                                 >
-                                                    {day.format('D').toString()}
+                                                    {day
+                                                        .locale(lang)
+                                                        .format('D')
+                                                        .toString()}
                                                 </Link>
                                             </td>
                                         )
@@ -109,6 +122,6 @@ Month.propTypes = {
 }
 
 export default connect(
-    (state) => ({ calendarData: getCalendarData(state) }),
+    state => ({ calendarData: getCalendarData(state) }),
     {}
 )(Month)

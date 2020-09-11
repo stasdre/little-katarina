@@ -5,14 +5,15 @@ import moment from 'moment'
 import { setTime, clearTime, getTimeData } from '../modules/Time'
 
 const Time = ({ setTime, timeData, clearTime }) => {
-    const { year, month, day } = useParams()
+    const { year, month, day, lang } = useParams()
     const selectedData = moment(`${day}/${month}/${year}`, 'D/M/YYYY')
     const prevDate = selectedData.clone().subtract(1, 'day')
     const prevDateLink = prevDate.isBefore(new Date(), 'day')
         ? `#`
-        : `/booking/${prevDate.format('YYYY/M/D')}`
-    const nextDateLink = `/booking/${selectedData
+        : `/${lang}/booking/${prevDate.locale('en').format('YYYY/M/D')}`
+    const nextDateLink = `/${lang}/booking/${selectedData
         .clone()
+        .locale('en')
         .add(1, 'day')
         .format('YYYY/M/D')}`
 
@@ -43,7 +44,7 @@ const Time = ({ setTime, timeData, clearTime }) => {
         { label: '23:00', value: '23' },
     ]
 
-    const handleTimeSelect = (event) => {
+    const handleTimeSelect = event => {
         const value = event.target.value
         if (!value) {
             setTime({
@@ -96,7 +97,7 @@ const Time = ({ setTime, timeData, clearTime }) => {
                 </div>
                 <select onChange={handleTimeSelect} className="time__select">
                     <option value=""></option>
-                    {times.map((time) => (
+                    {times.map(time => (
                         <option key={time.value} value={time.value}>
                             {time.label}
                         </option>
@@ -145,7 +146,7 @@ const Time = ({ setTime, timeData, clearTime }) => {
                 <div className="time__check-wrapper">
                     <div className="time__col">
                         <div className="time__head">Morning</div>
-                        {times.slice(0, 6).map((time) => (
+                        {times.slice(0, 6).map(time => (
                             <label className="time__label" key={time.value}>
                                 {time.label}
                                 <input
@@ -174,7 +175,7 @@ const Time = ({ setTime, timeData, clearTime }) => {
                     </div>
                     <div className="time__col">
                         <div className="time__head">Afternoon</div>
-                        {times.slice(6, 12).map((time) => (
+                        {times.slice(6, 12).map(time => (
                             <label className="time__label" key={time.value}>
                                 {time.label}
                                 <input
@@ -203,7 +204,7 @@ const Time = ({ setTime, timeData, clearTime }) => {
                     </div>
                     <div className="time__col">
                         <div className="time__head">Evening</div>
-                        {times.slice(12, 18).map((time) => (
+                        {times.slice(12, 18).map(time => (
                             <label className="time__label" key={time.value}>
                                 {time.label}
                                 <input
@@ -232,7 +233,7 @@ const Time = ({ setTime, timeData, clearTime }) => {
                     </div>
                     <div className="time__col">
                         <div className="time__head">Night</div>
-                        {times.slice(18, 24).map((time) => (
+                        {times.slice(18, 24).map(time => (
                             <label className="time__label" key={time.value}>
                                 {time.label}
                                 <input
@@ -263,7 +264,7 @@ const Time = ({ setTime, timeData, clearTime }) => {
             </div>
             <div className="time__nav">
                 <Link
-                    to="/booking"
+                    to={`/${lang}/booking`}
                     className="time__nav-link time__nav-link_back"
                 >
                     Back
@@ -276,7 +277,7 @@ const Time = ({ setTime, timeData, clearTime }) => {
     )
 }
 
-export default connect((state) => ({ timeData: getTimeData(state) }), {
+export default connect(state => ({ timeData: getTimeData(state) }), {
     setTime,
     clearTime,
 })(Time)

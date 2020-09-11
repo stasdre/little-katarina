@@ -79,7 +79,7 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
-
+    'langs'=>['en', 'ar', 'de', 'he'],
     'locale' => 'en',
 
     /*

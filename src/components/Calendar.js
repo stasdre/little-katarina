@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+
 import {
     nextCalendar,
     prevCalendar,
@@ -70,7 +71,7 @@ class Calendar extends React.Component {
 
     updateCalendars = () => {
         const { setCalendars, calendarData } = this.props
-        console.log(calendarData.lastCurrentMonth)
+
         const momentInitial = moment(
             calendarData.lastCurrentMonth,
             momentFormat
@@ -135,7 +136,7 @@ class Calendar extends React.Component {
     }
 }
 
-export default connect((state) => ({ calendarData: getCalendarData(state) }), {
+export default connect(state => ({ calendarData: getCalendarData(state) }), {
     setCalendars,
     nextCalendar,
     prevCalendar,
