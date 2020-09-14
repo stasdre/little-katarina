@@ -91,6 +91,7 @@
     top: -35px;
     right: -16px;
     @util size(16px);
+    font-size: 0;
     background: transparent svg-load('x_white.svg') center center no-repeat;
     @media (--extra-large) {
         @util size(22px);
