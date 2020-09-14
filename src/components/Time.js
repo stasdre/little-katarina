@@ -1,10 +1,16 @@
-import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useParams, useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 import moment from 'moment'
 import { setTime, clearTime, getTimeData } from '../modules/Time'
+import Modal from './Modal'
 
 const Time = ({ setTime, timeData, clearTime }) => {
+    const [modalClosed, setModalClosed] = useState(true)
+    const [modalSuccesClosed, setModalSuccessClosed] = useState(true)
+
+    const history = useHistory()
+
     const { year, month, day, lang } = useParams()
     const selectedData = moment(`${day}/${month}/${year}`, 'D/M/YYYY')
     const prevDate = selectedData.clone().subtract(1, 'day')
@@ -17,32 +23,11 @@ const Time = ({ setTime, timeData, clearTime }) => {
         .add(1, 'day')
         .format('YYYY/M/D')}`
 
-    const times = [
-        { label: '0:00', value: '0' },
-        { label: '1:00', value: '1' },
-        { label: '2:00', value: '2' },
-        { label: '3:00', value: '3' },
-        { label: '4:00', value: '4' },
-        { label: '5:00', value: '5' },
-        { label: '6:00', value: '6' },
-        { label: '7:00', value: '7' },
-        { label: '8:00', value: '8' },
-        { label: '9:00', value: '9' },
-        { label: '10:00', value: '10' },
-        { label: '11:00', value: '11' },
-        { label: '12:00', value: '12' },
-        { label: '13:00', value: '13' },
-        { label: '14:00', value: '14' },
-        { label: '15:00', value: '15' },
-        { label: '16:00', value: '16' },
-        { label: '17:00', value: '17' },
-        { label: '18:00', value: '18' },
-        { label: '19:00', value: '19' },
-        { label: '20:00', value: '20' },
-        { label: '21:00', value: '21' },
-        { label: '22:00', value: '22' },
-        { label: '23:00', value: '23' },
-    ]
+    const times = []
+    const dateTime = selectedData.clone().locale(lang)
+    for (let i = 0; i < 24; i++) {
+        times.push({ label: dateTime.hours(i).format('H:mm'), value: i })
+    }
 
     const handleTimeSelect = event => {
         const value = event.target.value
@@ -56,13 +41,105 @@ const Time = ({ setTime, timeData, clearTime }) => {
         const startTime = selectedData.clone().hour(value * 1)
         const endTime = startTime.clone().add(4, 'hours')
         setTime({
-            startBooking: startTime.format('YYYY-M-D H:mm'),
-            endBooking: endTime.format('YYYY-M-D H:mm'),
+            startBooking: startTime.locale('en').format('YYYY-M-D H:mm'),
+            endBooking: endTime.locale('en').format('YYYY-M-D H:mm'),
         })
     }
 
+    const book = () => {
+        setModalClosed(false)
+    }
+
+    const closeModal = () => {
+        setModalClosed(true)
+    }
+
+    const bookHandler = () => {
+        setModalClosed(true)
+        setModalSuccessClosed(false)
+    }
+
+    const closeModalSuccess = () => {
+        setModalSuccessClosed(true)
+        history.push(`/${lang}/booking`)
+    }
     return (
         <>
+            <Modal
+                title=""
+                isClosed={modalSuccesClosed}
+                btnHandler={() => null}
+                closeBtnHandler={closeModalSuccess}
+                hideBtn={true}
+                hideTitle={true}
+            >
+                <h3 className="modal__success-title">successfully booked</h3>
+                <div className="modal__success" />
+            </Modal>
+            <Modal
+                title="Book a time:"
+                isClosed={modalClosed}
+                closeBtnHandler={closeModal}
+                btnHandler={bookHandler}
+            >
+                <p className="modal__date">
+                    Date:
+                    <span>
+                        {timeData.startBooking
+                            ? moment(timeData.startBooking, 'YYYY-M-D H:mm')
+                                  .locale(lang)
+                                  .format(' MMMM D')
+                            : ''}
+                    </span>
+                </p>
+                <p className="modal__time">
+                    Time:
+                    <span>
+                        {timeData.startBooking
+                            ? moment(timeData.startBooking, 'YYYY-M-D H:mm')
+                                  .locale(lang)
+                                  .format(' H:mm ')
+                            : ''}
+                        -
+                        {timeData.endBooking
+                            ? moment(timeData.endBooking, 'YYYY-M-D H:mm')
+                                  .locale(lang)
+                                  .format(' H:mm')
+                            : ''}
+                    </span>
+                </p>
+                <h4 className="modal__subtitle">Personal data:</h4>
+                <form className="form modal__form" action="#" method="post">
+                    <div className="form__row">
+                        <div className="form__col">
+                            <input
+                                className="form__input"
+                                type="text"
+                                placeholder="Name"
+                            />
+                        </div>
+                    </div>
+                    <div className="form__row">
+                        <div className="form__col">
+                            <input
+                                className="form__input"
+                                type="text"
+                                placeholder="Phone"
+                            />
+                        </div>
+                    </div>
+                    <div className="form__row">
+                        <div className="form__col">
+                            <input
+                                className="form__input"
+                                type="email"
+                                placeholder="Email"
+                            />
+                        </div>
+                    </div>
+                    <div className="form__row"></div>
+                </form>
+            </Modal>
             <h2 className="time__title">Book a time:</h2>
             <p className="time__subtitle time__subtitle_sm">
                 Choose a time period.
@@ -74,7 +151,9 @@ const Time = ({ setTime, timeData, clearTime }) => {
                 >
                     Prev
                 </Link>
-                <div className="time__day">{selectedData.format('MMMM D')}</div>
+                <div className="time__day">
+                    {selectedData.locale(lang).format('MMMM D')}
+                </div>
                 <Link
                     to={nextDateLink}
                     className="time__arrow time__arrow_right"
@@ -269,9 +348,14 @@ const Time = ({ setTime, timeData, clearTime }) => {
                 >
                     Back
                 </Link>
-                <a href="#" className="time__nav-link time__nav-link_next">
-                    Next
-                </a>
+                {modalClosed && timeData.startBooking ? (
+                    <button
+                        onClick={book}
+                        className="time__nav-link time__nav-link_next"
+                    >
+                        Next
+                    </button>
+                ) : null}
             </div>
         </>
     )

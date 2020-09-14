@@ -110,9 +110,11 @@ class Calendar extends React.Component {
             this.setState({ lastCurrentMonth: calendarData.lastCurrentMonth })
             bookingRequest({
                 from: moment(calendarData.lastCurrentMonth, momentFormat)
+                    .locale('en')
                     .subtract(1, 'month')
                     .format('YYYY-MM-DD'),
                 to: moment(calendarData.lastCurrentMonth, momentFormat)
+                    .locale('en')
                     .add(2, 'month')
                     .format('YYYY-MM-DD'),
             })

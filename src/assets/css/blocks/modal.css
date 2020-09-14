@@ -96,3 +96,66 @@
         @util size(22px);
     }
 }
+
+.modal__date,
+.modal__time {
+    font-weight: bold;
+    font-size: 0.86rem;
+    line-height: 22px;
+    letter-spacing: 0.22px;
+    text-transform: uppercase;
+    @media (--extra-large) {
+        font-size: 0.67rem;
+    }
+    & span {
+        text-transform: none;
+        font-weight: normal;
+    }
+}
+.modal__date {
+    margin-bottom: 5px;
+}
+.modal__time {
+    margin-bottom: 22px;
+    @media (--extra-large) {
+        margin-bottom: 44px;
+    }
+}
+
+.modal__subtitle {
+    font-size: 1.14rem;
+    line-height: 150%;
+    margin-bottom: 14px;
+    @media (--extra-large) {
+        font-size: 1rem;
+    }
+}
+
+.modal__form {
+    margin-bottom: 28px;
+    @media (--extra-large) {
+        margin-bottom: 70px;
+    }
+}
+
+.modal__success-title {
+    font-family: Raleway;
+    font-size: 24px;
+    line-height: 135%;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    @media (--extra-large) {
+        margin-bottom: 60px;
+    }
+}
+
+.modal__success {
+    width: 100%;
+    height: 80px;
+    background: transparent svg-load('success.svg') center center/80px no-repeat;
+    @media (--extra-large) {
+        height: 105px;
+        background: transparent svg-load('success.svg') center center no-repeat;
+    }
+}

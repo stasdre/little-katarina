@@ -29,7 +29,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}']], f
         return view('home');
     })->name('home');
 
-    Route::get('/booking', function () {
+    Route::get('/booking/{year?}/{month?}/{day?}', function () {
         return view('book');
     })->name('book');
 

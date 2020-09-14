@@ -9,6 +9,8 @@ const Modal = ({
     buttonName,
     btnHandler,
     closeBtnHandler,
+    hideBtn,
+    hideTitle,
 }) => {
     return (
         <div
@@ -18,13 +20,15 @@ const Modal = ({
             })}
         >
             <div className="modal__container">
-                <h3 className="modal__title">{title}</h3>
+                {!hideTitle ? <h3 className="modal__title">{title}</h3> : null}
                 <div className="modal__contant">{children}</div>
-                <div className="modal__btn-wrapper">
-                    <button className="modal__btn" onClick={btnHandler}>
-                        {buttonName}
-                    </button>
-                </div>
+                {!hideBtn ? (
+                    <div className="modal__btn-wrapper">
+                        <button className="modal__btn" onClick={btnHandler}>
+                            {buttonName}
+                        </button>
+                    </div>
+                ) : null}
                 <button className="modal__close" onClick={closeBtnHandler}>
                     x
                 </button>
@@ -34,17 +38,21 @@ const Modal = ({
 }
 
 Modal.propTypes = {
-    children: PropTypes.element.isRequired,
+    children: PropTypes.any.isRequired,
     title: PropTypes.string,
     isClosed: PropTypes.bool,
     buttonName: PropTypes.string,
     btnHandler: PropTypes.func.isRequired,
     closeBtnHandler: PropTypes.func.isRequired,
+    hideBtn: PropTypes.bool,
+    hideTitle: PropTypes.bool,
 }
 
 Modal.defaultProps = {
     isClosed: true,
     buttonName: 'Book',
+    hideTitle: false,
+    hideBtn: false,
 }
 
 export default Modal

@@ -155,6 +155,7 @@
     line-height: 150%;
     color: #ffffff;
     text-transform: uppercase;
+    background: transparent;
     @media (--mega-large) {
         font-size: 0.9rem;
     }

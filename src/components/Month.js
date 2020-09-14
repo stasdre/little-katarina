@@ -16,13 +16,18 @@ const Month = ({ current, handelNext, handelPrev, calendarData }) => {
     const momentData = moment(current, 'M/YYYY')
     const startDay = momentData
         .clone()
+        .locale(lang)
         .startOf('month')
         .startOf('week')
     const endDay = momentData
         .clone()
+        .locale(lang)
         .endOf('month')
         .endOf('week')
-    const day = startDay.clone().subtract(1, 'day')
+    const day = startDay
+        .clone()
+        .locale(lang)
+        .subtract(1, 'day')
     const calendar = []
 
     while (day.isBefore(endDay, 'day')) {
@@ -90,7 +95,7 @@ const Month = ({ current, handelNext, handelPrev, calendarData }) => {
                     <table>
                         <thead>
                             <tr>
-                                {moment.weekdaysShort().map(item => (
+                                {moment.weekdaysShort(true).map(item => (
                                     <td key={item}>{item}</td>
                                 ))}
                             </tr>
