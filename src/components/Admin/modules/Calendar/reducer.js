@@ -5,8 +5,14 @@ import {
     nextCalendar,
     prevCalendar,
     setCalendars,
-    bookingRequest,
+    setBookingSuccess,
+    setBookingRequest,
+    setBookingFailure,
+    unsetBookingSuccess,
+    unsetBookingRequest,
+    unsetBookingFailure,
     bookingSuccess,
+    bookingRequest,
     bookingFailure,
 } from './actions'
 
@@ -46,6 +52,13 @@ const isNext = handleActions({}, true)
 
 const bookedDays = handleActions(
     {
+        [setBookingSuccess]: (_state, action) => [
+            ..._state,
+            moment(action.payload.date, 'YYYY-MM-DD').format('YYYY-MM-DD'),
+        ],
+        [unsetBookingSuccess]: (_state, action) => [
+            ..._state.filter(item => item !== action.payload.date),
+        ],
         [bookingSuccess]: (_state, action) => action.payload.dates,
     },
     []
@@ -53,6 +66,14 @@ const bookedDays = handleActions(
 
 const isLoading = handleActions(
     {
+        [setBookingRequest]: () => true,
+        [setBookingSuccess]: () => false,
+        [setBookingFailure]: () => false,
+
+        [unsetBookingRequest]: () => true,
+        [unsetBookingSuccess]: () => false,
+        [unsetBookingFailure]: () => false,
+
         [bookingRequest]: () => true,
         [bookingSuccess]: () => false,
         [bookingFailure]: () => false,

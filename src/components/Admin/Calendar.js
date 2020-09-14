@@ -7,7 +7,7 @@ import {
     setCalendars,
     getCalendarData,
     bookingRequest,
-} from '../modules/Calendar'
+} from './modules/Calendar'
 import Month from './Month'
 import moment from 'moment'
 import classNames from 'classnames'
@@ -128,9 +128,6 @@ class Calendar extends React.Component {
 
         return (
             <>
-                <h2 className="booking__title">
-                    Book <span>4 hours minimum session:</span>
-                </h2>
                 <div
                     className={classNames({
                         calendar: true,
@@ -140,6 +137,7 @@ class Calendar extends React.Component {
                     <button
                         className="calendar__control-big calendar__control-big_left"
                         onClick={this.handelPrev}
+                        style={{ marginRight: '10px' }}
                     >
                         Prev
                     </button>
@@ -154,6 +152,7 @@ class Calendar extends React.Component {
                     <button
                         className="calendar__control-big calendar__control-big_right"
                         onClick={this.handelNext}
+                        style={{ marginLeft: '-40px' }}
                     >
                         Next
                     </button>

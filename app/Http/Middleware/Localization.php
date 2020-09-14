@@ -18,9 +18,9 @@ class Localization
     {   
         $locale = $request->segment(1);
 
-        if($locale && !in_array($locale, config('app.langs'))){
-            abort(404);
-        }
+        // if($locale && !in_array($locale, config('app.langs'))){
+        //     abort(404);
+        // }
 
         if(!$locale){
             $locale = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
