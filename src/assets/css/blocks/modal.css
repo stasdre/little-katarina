@@ -1,0 +1,98 @@
+.modal {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    &.modal_closed {
+        display: none;
+    }
+}
+.modal__container {
+    position: relative;
+    background: #000000;
+    border: 2px solid #2b662e;
+    box-sizing: border-box;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 14px;
+    padding: 34px 24px 34px 24px;
+    width: 90%;
+    max-width: 500px;
+    @media (--extra-large) {
+        border-radius: 20px;
+        padding: 50px;
+    }
+}
+
+.modal__title {
+    font-family: Raleway;
+    font-size: 1.2rem;
+    line-height: 135%;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+}
+
+.modal__contant {
+    margin-bottom: 26px;
+    & ul {
+        padding-left: 20px;
+        & li {
+            list-style-type: disc;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 150%;
+            @media (--extra-large) {
+                font-size: 0.9rem;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    & a {
+        color: #fff;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.modal__btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal__btn {
+    display: flex;
+    background: none;
+    font-size: 0.8rem;
+    line-height: 150%;
+    color: #ffffff;
+    text-transform: uppercase;
+    align-items: center;
+    &::after {
+        content: '';
+        background: transparent
+            svg-load('arrow_btn.svg', fill=transparent, stroke-width=15px)
+            center center no-repeat;
+        width: 26px;
+        height: 13px;
+        margin-left: 15px;
+    }
+}
+
+.modal__close {
+    position: absolute;
+    top: -35px;
+    right: -16px;
+    @util size(16px);
+    background: transparent svg-load('x_white.svg') center center no-repeat;
+    @media (--extra-large) {
+        @util size(22px);
+    }
+}
