@@ -89,12 +89,14 @@ mix.extract(['svgxuse', 'supports-webp'], 'public/js/vendors.js')
 mix.js('src/index.js', 'public/js')
 mix.js('src/book.js', 'public/js')
 mix.js('src/contacts.js', 'public/js')
+mix.js('src/gallery.js', 'public/js')
 
 mix.js('src/admin.js', 'public/js')
 
 mix.postCss('src/assets/css/home.css', 'public/css', postCssConfig)
 mix.postCss('src/assets/css/contact.css', 'public/css', postCssConfig)
 mix.postCss('src/assets/css/book.css', 'public/css', postCssConfig)
+mix.postCss('src/assets/css/gallery.css', 'public/css', postCssConfig)
 
 mix.copy('src/assets/images/icons/*.svg', 'public/images/icons')
 mix.copy('src/assets/images/*.*', 'public/images')

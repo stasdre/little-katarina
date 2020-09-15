@@ -26,6 +26,7 @@
     border-radius: 0 16px 16px 0;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(70px);
+    transition: 0.3s background;
     @media (--medium) {
         background: #d6bd96;
         backdrop-filter: none;
@@ -33,6 +34,9 @@
     }
     @media (--small-landscape), (--medium-landscape) {
         padding: 6.5% 23px 6.5% 23px;
+    }
+    &:hover {
+        background: #c3a67b;
     }
 }
 

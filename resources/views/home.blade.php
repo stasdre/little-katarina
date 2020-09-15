@@ -32,9 +32,9 @@
         </picture>
       </div>
       <div class="fantazi__right">
-        <a class="fantazi__down" href="/booking">Enjoy it</a>
-        <a class="fantazi__text" href="#">Check out our photos</a>
-        <button class="fantazi__btn"></button>
+        <a class="fantazi__down" href="/{{app()->getLocale()}}/booking">Enjoy it</a>
+        <a class="fantazi__text" href="/{{app()->getLocale()}}/gallery">Feel a fantasy like</a>
+        <a href="/{{app()->getLocale()}}/gallery" class="fantazi__btn"></a>
       </div>
     </div>
   </div>

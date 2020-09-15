@@ -1,0 +1,109 @@
+body.webp .gallery {
+    background-image: image-set(
+        url('../images/bg/contact_xs.webp') 1x,
+        url('../images/bg/contact_xs@2x.webp') 2x
+    );
+
+    @media (--small) {
+        background-image: image-set(
+            url('../images/bg/contact_sm.webp') 1x,
+            url('../images/bg/contact_sm@2x.webp') 2x
+        );
+    }
+
+    @media (--large) {
+        background-image: image-set(
+            url('../images/bg/contact.webp') 1x,
+            url('../images/bg/contact@2x.webp') 2x
+        );
+    }
+}
+
+body.no-webp .gallery {
+    background-image: image-set(
+        url('../images/bg/contact_xs.jpg') 1x,
+        url('../images/bg/contact_xs@2x.jpg') 2x
+    );
+
+    @media (--small) {
+        background-image: image-set(
+            url('../images/bg/contact_sm.jpg') 1x,
+            url('../images/bg/contact_sm@2x.jpg') 2x
+        );
+    }
+
+    @media (--large) {
+        background-image: image-set(
+            url('../images/bg/contact.jpg') 1x,
+            url('../images/bg/contact@2x.jpg') 2x
+        );
+    }
+}
+
+.gallery {
+    flex: 1 1 auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+    @media (--large) {
+        padding-bottom: 154px;
+    }
+    & .gallery__header {
+        padding-top: 25px;
+        margin-bottom: 35px;
+        @media (--large) {
+            margin-bottom: 78px;
+            padding-top: 40px;
+        }
+        @media (--extra-large) {
+            padding-top: 49px;
+        }
+    }
+}
+
+.gallery__img {
+    display: block;
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    @media (--medium) {
+        height: 700px;
+    }
+}
+
+.glide__slides {
+    /* height: 500px; */
+
+    & .glide__slide {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.gallery__arrow {
+    padding: 0;
+    border: none;
+    @util size(25px);
+    /* border-radius: 50%;
+    padding: 15px;
+    background-color: rgba(1, 1, 1, 0.5); */
+    background-image: svg-load('arrow_calendar.svg', stroke=#2b662e);
+    /* background-size: 10px 12px; */
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 0;
+}
+
+.gallery__arrow--next {
+    transform: rotate(180deg) translateY(50%);
+}
+
+.gallery__bullet {
+    background-color: hsla(0, 0%, 100%, 0.5);
+}
+
+.gallery__bullet[class*='active'] {
+    background-color: #fff;
+}

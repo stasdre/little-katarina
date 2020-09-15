@@ -39,6 +39,10 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}']], f
         return view('contact-us');
     })->name('contact');
 
+    Route::get('/gallery', function () {
+        return view('gallery');
+    })->name('gallery');
+
 });
 
 Route::get('/get-booking-dates/{from}/{to}',function($from,$to){

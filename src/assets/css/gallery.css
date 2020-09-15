@@ -1,0 +1,11 @@
+@import './init.css';
+@import '../../../node_modules/@glidejs/glide/dist/css/glide.core.min.css';
+@import '../../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css';
+
+@import './blocks/header.css';
+@import './blocks/langs.css';
+@import './blocks/nav.css';
+@import './blocks/burger.css';
+@import './blocks/footer.css';
+
+@import './blocks/gallery.css';

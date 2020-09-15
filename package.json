@@ -12,6 +12,7 @@
         "postinstall": "npm run build"
     },
     "dependencies": {
+        "@glidejs/glide": "^3.4.1",
         "classnames": "^2.2.6",
         "core-js": "^3.6.5",
         "formik": "^2.1.5",
