@@ -26,37 +26,27 @@
                     <ul class="glide__slides">
                     <li class="glide__slide">
                         <picture class="gallery__picture">
-                            <img class="gallery__img" src="https://loremflickr.com/1024/768"/>
+                            <img class="gallery__img" src="/images/slide_1.jpg"/>
                         </picture>
                     </li>
                     <li class="glide__slide">
                         <picture class="gallery__picture">
-                            <img class="gallery__img" src="https://loremflickr.com/800/2048"/>
+                            <img class="gallery__img" src="/images/slide_2.png"/>
                         </picture>
                     </li>
                     <li class="glide__slide">
                         <picture class="gallery__picture">
-                            <img class="gallery__img" src="https://loremflickr.com/600/400"/>
+                            <img class="gallery__img" src="/images/slide_3.jpg"/>
                         </picture>
                     </li>
                     <li class="glide__slide">
                         <picture class="gallery__picture">
-                            <img class="gallery__img" src="https://loremflickr.com/600/400"/>
+                            <img class="gallery__img" src="/images/slide_4.jpg"/>
                         </picture>
                     </li>
                     <li class="glide__slide">
                         <picture class="gallery__picture">
-                            <img class="gallery__img" src="https://loremflickr.com/600/400"/>
-                        </picture>
-                    </li>
-                    <li class="glide__slide">
-                        <picture class="gallery__picture">
-                            <img class="gallery__img" src="https://loremflickr.com/600/400"/>
-                        </picture>
-                    </li>
-                    <li class="glide__slide">
-                        <picture class="gallery__picture">
-                            <img class="gallery__img" src="https://loremflickr.com/600/400"/>
+                            <img class="gallery__img" src="/images/slide_5.jpg"/>
                         </picture>
                     </li>
                     </ul>
@@ -73,8 +63,6 @@
                     <button class="gallery__bullet glide__bullet" data-glide-dir="=2"></button>
                     <button class="gallery__bullet glide__bullet" data-glide-dir="=3"></button>
                     <button class="gallery__bullet glide__bullet" data-glide-dir="=4"></button>
-                    <button class="gallery__bullet glide__bullet" data-glide-dir="=5"></button>
-                    <button class="gallery__bullet glide__bullet" data-glide-dir="=6"></button>
                 </div>                
             </div>
         </div>

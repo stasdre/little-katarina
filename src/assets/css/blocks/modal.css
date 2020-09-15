@@ -54,12 +54,6 @@
             }
         }
     }
-    & a {
-        color: #fff;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
 }
 
 .modal__btn-wrapper {
@@ -167,4 +161,9 @@
     @media (--extra-large) {
         margin-top: 70px;
     }
+}
+
+.modal__link {
+    color: #a9d3ab;
+    text-decoration: underline;
 }

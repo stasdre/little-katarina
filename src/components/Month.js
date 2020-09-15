@@ -68,8 +68,13 @@ const Month = ({ current, handelNext, handelPrev, calendarData }) => {
                         «heaven time» with our angels.
                     </li>
                     <li>
-                        Please feel free to ask any additional questions via
-                        <a href="mailto:thelittlekatarina@gmail.com"> Email</a>
+                        Please feel free to ask any additional questions via{' '}
+                        <a
+                            className="modal__link"
+                            href="mailto:thelittlekatarina@gmail.com"
+                        >
+                            Email
+                        </a>
                     </li>
                 </ul>
             </Modal>
