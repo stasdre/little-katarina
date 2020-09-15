@@ -7,15 +7,10 @@ import Glide from '@glidejs/glide'
 const glide = new Glide('.glide', {
     type: 'carousel',
     focusAt: 'center',
-    perView: 3,
+    perView: 1,
     autoplay: 3000,
-    gap: 50,
+    gap: 0,
     hoverpause: true,
-    breakpoints: {
-        1200: { perView: 3 },
-        1024: { perView: 2 },
-        800: { perView: 1 },
-    },
 })
 
 glide.mount()

@@ -31,11 +31,11 @@
             <img class="fantazi__img" src="/images/fantazi.jpg" srcset="/images/fantazi@2x.jpg 2x"/>
         </picture>
       </div>
-      <div class="fantazi__right">
-        <a class="fantazi__down" href="/{{app()->getLocale()}}/booking">Enjoy it</a>
-        <a class="fantazi__text" href="/{{app()->getLocale()}}/gallery">See our photos</a>
-        <a href="/{{app()->getLocale()}}/gallery" class="fantazi__btn"></a>
-      </div>
+      <a href="/{{app()->getLocale()}}/gallery" class="fantazi__right">
+        <p class="fantazi__down">Enjoy it</p>
+        <p class="fantazi__text">See our photos</p>
+        <button class="fantazi__btn"></button>
+      </a>
     </div>
   </div>
 </section>
@@ -191,7 +191,7 @@
 
 
 <section class="book">
-  <div class="container book__container"><a class="btn" href="/booking">BOOK TIME NOW</a></div>
+  <div class="container book__container"><a class="btn" href="/{{app()->getLocale()}}/booking">BOOK TIME NOW</a></div>
 </section>
 </main>
 @endsection

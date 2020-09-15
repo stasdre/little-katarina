@@ -26,7 +26,7 @@
     border-radius: 0 16px 16px 0;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(70px);
-    transition: 0.3s background;
+    transition: 0.3s;
     @media (--medium) {
         background: #d6bd96;
         backdrop-filter: none;
@@ -37,6 +37,9 @@
     }
     &:hover {
         background: #c3a67b;
+        & .fantazi__text {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -63,9 +66,6 @@
     line-height: 135%;
     color: #335125;
     margin-bottom: 10px;
-    &:hover {
-        text-decoration: underline;
-    }
     @media (--large) {
         font-size: 1.5rem;
     }

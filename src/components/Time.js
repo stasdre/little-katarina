@@ -140,7 +140,7 @@ const Time = ({
                             : ''}
                     </span>
                 </p>
-                <h4 className="modal__subtitle">Personal data:</h4>
+                <h4 className="modal__subtitle">Please enter:</h4>
                 <Formik
                     initialValues={{
                         name: '',
@@ -173,7 +173,7 @@ const Time = ({
                                     <Field
                                         className="form__input"
                                         name="phone"
-                                        placeholder="Phone"
+                                        placeholder="Phone (not necessarily)"
                                     />
                                 </div>
                             </div>
