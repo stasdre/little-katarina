@@ -65,6 +65,7 @@
 .modal__btn-wrapper {
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .modal__btn {
@@ -133,10 +134,10 @@
 }
 
 .modal__form {
-    margin-bottom: 28px;
+    /* margin-bottom: 28px;
     @media (--extra-large) {
         margin-bottom: 70px;
-    }
+    } */
 }
 
 .modal__success-title {
@@ -158,5 +159,12 @@
     @media (--extra-large) {
         height: 105px;
         background: transparent svg-load('success.svg') center center no-repeat;
+    }
+}
+
+.modal__btn-wrapper_margin {
+    margin-top: 28px;
+    @media (--extra-large) {
+        margin-top: 70px;
     }
 }

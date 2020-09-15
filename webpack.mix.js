@@ -76,6 +76,8 @@ mix.extract(
         'redux',
         'redux-actions',
         'redux-saga',
+        'formik',
+        'yup'
     ],
     'public/js/react_vendors.js'
 )

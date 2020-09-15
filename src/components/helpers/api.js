@@ -6,3 +6,19 @@ export const getDates = (from, to) =>
             response.status !== 200 ? Promise.reject(response) : response.json()
         )
         .catch(error => error)
+
+export const bookTime = data =>
+    fetch(`${apiUrl}/booking-time`, {
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': document
+                .querySelector('meta[name="csrf-token"]')
+                .getAttribute('content'),
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then(response =>
+            response.status !== 200 ? Promise.reject(response) : response.json()
+        )
+        .catch(error => error)

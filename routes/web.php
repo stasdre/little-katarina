@@ -1,10 +1,12 @@
 <?php
 
+use App\Mail\Booking as MailBooking;
 use App\Models\Booking;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +53,23 @@ Route::get('/get-booking-dates/{from}/{to}',function($from,$to){
     }
 
     return['staus'=>'ok', 'dates'=>[]];
+});
+
+Route::post('/booking-time', function(Request $request){
+
+    $data = Booking::where('date_booking', ''.$request->get('date_booking').'')->count();
+
+    if($data<10){
+        $dataBook = Booking::insert($request->all());
+        if($dataBook){
+            Mail::send(new MailBooking($request->all()));
+            return ['staus'=>'ok'];
+        }
+
+        return ['staus'=>'error'];
+    }
+    
+    return ['staus'=>'error'];
 });
 
 Route::group(['prefix'=>'admin'],function(){
