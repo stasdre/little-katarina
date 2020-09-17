@@ -46,6 +46,11 @@
         margin-bottom: 0;
         margin-right: 15px;
     }
+    &.nav__item_hide-large {
+        @media (--large) {
+            display: none;
+        }
+    }
 }
 .nav__link {
     font-family: var(--sub-font);
